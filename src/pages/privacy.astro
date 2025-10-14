@@ -1,0 +1,179 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const title = "Privacy Policy - Global Calling Codes Map";
+const description = "Privacy Policy for Global Calling Codes Map. Learn how we protect your privacy and handle your data when using our international calling codes service.";
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Privacy Policy",
+  "description": description,
+  "publisher": {
+    "@type": "Organization",
+    "name": "Global Calling Codes Map"
+  }
+};
+---
+
+<BaseLayout 
+  title={title} 
+  description={description}
+  keywords="privacy policy,data protection,user privacy,global calling codes map,terms of service"
+  structuredData={structuredData}
+>
+  <Header />
+  <main class="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+    <div class="prose prose-lg max-w-none">
+      <h1 class="text-4xl font-bold text-gray-900 mb-8">Privacy Policy</h1>
+      
+      <p class="text-gray-600 mb-8">
+        <strong>Last updated:</strong> January 2025
+      </p>
+
+      <div class="space-y-8">
+        <section>
+          <h2 class="text-2xl font-semibold text-gray-900 mb-4">1. Introduction</h2>
+          <p class="text-gray-700 leading-relaxed">
+            Welcome to Global Calling Codes Map ("we," "our," or "us"). We are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our services.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-semibold text-gray-900 mb-4">2. Information We Collect</h2>
+          
+          <h3 class="text-xl font-medium text-gray-800 mb-3">2.1 Information You Provide</h3>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            We may collect information that you voluntarily provide to us, including:
+          </p>
+          <ul class="list-disc pl-6 text-gray-700 space-y-2 mb-4">
+            <li>Contact information when you reach out to us</li>
+            <li>Feedback and suggestions you submit</li>
+            <li>Any other information you choose to provide</li>
+          </ul>
+
+          <h3 class="text-xl font-medium text-gray-800 mb-3">2.2 Automatically Collected Information</h3>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            When you visit our website, we may automatically collect certain information, including:
+          </p>
+          <ul class="list-disc pl-6 text-gray-700 space-y-2">
+            <li>IP address and location information</li>
+            <li>Browser type and version</li>
+            <li>Operating system</li>
+            <li>Pages visited and time spent on our site</li>
+            <li>Referring website addresses</li>
+            <li>Device information and screen resolution</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-semibold text-gray-900 mb-4">3. How We Use Your Information</h2>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            We use the collected information for various purposes, including:
+          </p>
+          <ul class="list-disc pl-6 text-gray-700 space-y-2">
+            <li>Providing and maintaining our service</li>
+            <li>Improving user experience and website functionality</li>
+            <li>Analyzing usage patterns and trends</li>
+            <li>Responding to your inquiries and support requests</li>
+            <li>Detecting and preventing fraud or abuse</li>
+            <li>Complying with legal obligations</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-semibold text-gray-900 mb-4">4. Information Sharing and Disclosure</h2>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            We do not sell, trade, or otherwise transfer your personal information to third parties, except in the following circumstances:
+          </p>
+          <ul class="list-disc pl-6 text-gray-700 space-y-2">
+            <li><strong>Service Providers:</strong> We may share information with trusted third-party service providers who assist us in operating our website and providing our services</li>
+            <li><strong>Legal Requirements:</strong> We may disclose information when required by law or to protect our rights, property, or safety</li>
+            <li><strong>Business Transfers:</strong> In the event of a merger, acquisition, or sale of assets, your information may be transferred</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-semibold text-gray-900 mb-4">5. Data Security</h2>
+          <p class="text-gray-700 leading-relaxed">
+            We implement appropriate technical and organizational security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the internet or electronic storage is 100% secure, and we cannot guarantee absolute security.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-semibold text-gray-900 mb-4">6. Cookies and Tracking Technologies</h2>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            Our website may use cookies and similar tracking technologies to enhance your browsing experience. Cookies are small data files stored on your device that help us:
+          </p>
+          <ul class="list-disc pl-6 text-gray-700 space-y-2 mb-4">
+            <li>Remember your preferences and settings</li>
+            <li>Analyze website traffic and usage patterns</li>
+            <li>Improve website performance and functionality</li>
+          </ul>
+          <p class="text-gray-700 leading-relaxed">
+            You can control cookie settings through your browser preferences. However, disabling cookies may affect some website functionality.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-semibold text-gray-900 mb-4">7. Third-Party Links</h2>
+          <p class="text-gray-700 leading-relaxed">
+            Our website may contain links to third-party websites or services. We are not responsible for the privacy practices or content of these external sites. We encourage you to review the privacy policies of any third-party sites you visit.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-semibold text-gray-900 mb-4">8. Children's Privacy</h2>
+          <p class="text-gray-700 leading-relaxed">
+            Our service is not intended for children under the age of 13. We do not knowingly collect personal information from children under 13. If we become aware that we have collected personal information from a child under 13, we will take steps to delete such information.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-semibold text-gray-900 mb-4">9. Your Rights</h2>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            Depending on your location, you may have certain rights regarding your personal information, including:
+          </p>
+          <ul class="list-disc pl-6 text-gray-700 space-y-2">
+            <li>The right to access your personal information</li>
+            <li>The right to correct inaccurate information</li>
+            <li>The right to delete your personal information</li>
+            <li>The right to restrict processing of your information</li>
+            <li>The right to data portability</li>
+            <li>The right to object to processing</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-semibold text-gray-900 mb-4">10. International Data Transfers</h2>
+          <p class="text-gray-700 leading-relaxed">
+            Your information may be transferred to and processed in countries other than your own. We ensure that such transfers comply with applicable data protection laws and implement appropriate safeguards to protect your information.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-semibold text-gray-900 mb-4">11. Changes to This Privacy Policy</h2>
+          <p class="text-gray-700 leading-relaxed">
+            We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date. We encourage you to review this Privacy Policy periodically for any changes.
+          </p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-semibold text-gray-900 mb-4">12. Contact Us</h2>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            If you have any questions about this Privacy Policy or our privacy practices, please contact us:
+          </p>
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <p class="text-gray-700">
+              <strong>Email:</strong> callingcodes@ayamap.com<br>
+              <strong>Website:</strong> <a href="/" class="text-blue-600 hover:text-blue-800">Global Calling Codes Map</a>
+            </p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>

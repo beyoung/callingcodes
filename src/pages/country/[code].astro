@@ -1,0 +1,260 @@
+---
+import { callingCodes } from '../../data/calling-codes';
+import { countryInfoDict, getCountryInfoByCode } from '../../data/country-info';
+import { WikipediaService, COUNTRY_TIMEZONES } from '../../utils/wikipedia';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Footer from '../../components/Footer.astro';
+
+export const prerender = false;
+
+const { code } = Astro.params;
+
+// 在服务器模式下动态获取国家信息
+const country = callingCodes.find(c => c.iso2.toLowerCase() === code?.toLowerCase());
+
+if (!country) {
+  return Astro.redirect('/404');
+}
+
+// 获取详细的国家信息（包含货币和人口数据）
+const countryInfo = getCountryInfoByCode(country.iso2);
+
+// 获取维基百科信息
+const wikipediaInfo = await WikipediaService.getCountryInfo(country.name);
+
+// 获取时间信息 - 优先使用country-info.ts中的时区数据
+const timezone = countryInfo?.timezone || COUNTRY_TIMEZONES[country.iso2] || 'UTC';
+const timeInfo = await WikipediaService.getCountryTime(timezone);
+
+const pageTitle = `${country.name} - Phone Code ${country.callingCode}`;
+const pageDescription = `View detailed information for ${country.name}: phone code ${country.callingCode}, country code ${country.iso2}, timezone ${timezone}${timeInfo ? `, current time ${timeInfo.currentTime}` : ''}.`;
+const canonicalUrl = `https://callingcode.ayamap.com/country/${code}`;
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Place",
+  "name": country.name,
+  "alternateName": country.nameZh,
+  "identifier": {
+    "@type": "PropertyValue",
+    "name": "ISO Country Code",
+    "value": country.iso2
+  },
+  "telephone": country.callingCode,
+  "geo": {
+    "@type": "GeoCoordinates"
+  },
+  "containedInPlace": {
+    "@type": "Place",
+    "name": country.region
+  }
+};
+---
+
+<BaseLayout 
+  title={pageTitle}
+  description={pageDescription}
+  keywords={`${country.name}, phone code, ${country.callingCode}, ${country.iso2}, ${country.region}, timezone, ${timezone}`}
+  ogImage={`https://flagcdn.com/w1200/${country.iso2.toLowerCase()}.png`}
+  structuredData={structuredData}
+>
+  
+  <main class="container mx-auto px-4 py-8 max-w-4xl">
+    <!-- Breadcrumb -->
+    <nav class="mb-6" aria-label="Breadcrumb navigation">
+      <ol class="flex items-center space-x-2 text-sm text-gray-600">
+        <li><a href="/" class="hover:text-blue-600">Home</a></li>
+        <li><span class="mx-2">/</span></li>
+        <li><span class="text-gray-900">{country.name}</span></li>
+      </ol>
+    </nav>
+
+    <!-- Country Header -->
+    <header class="bg-white rounded-lg shadow-sm p-6 mb-8">
+      <div class="flex items-center space-x-6">
+        <img 
+          src={`https://flagcdn.com/w160/${country.iso2.toLowerCase()}.png`}
+          alt={`${country.name} flag`}
+          class="w-24 h-16 object-cover rounded border shadow-sm"
+          loading="eager"
+        >
+        <div>
+          <h1 class="text-3xl font-bold text-gray-900 mb-2">{country.name}</h1>
+          <div class="flex items-center space-x-4 text-sm text-gray-500">
+            <span>Region: {country.region}</span>
+            <span>•</span>
+            <span>ISO Code: {country.iso2} / {country.iso3}</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <!-- Main Content -->
+      <div class="lg:col-span-2 space-y-8">
+        <!-- Basic Information -->
+        <section class="bg-white rounded-lg shadow-sm p-6">
+          <h2 class="text-2xl font-semibold text-gray-900 mb-4">Basic Information</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="p-4 bg-blue-50 rounded-lg">
+              <h3 class="font-semibold text-blue-900 mb-2">Phone Code</h3>
+              <p class="text-2xl font-bold text-blue-600">{country.callingCode}</p>
+            </div>
+            <div class="p-4 bg-green-50 rounded-lg">
+              <h3 class="font-semibold text-green-900 mb-2">Country Code</h3>
+              <p class="text-lg font-semibold text-green-600">{country.iso2} / {country.iso3}</p>
+            </div>
+            <div class="p-4 bg-purple-50 rounded-lg">
+              <h3 class="font-semibold text-purple-900 mb-2">Region</h3>
+              <p class="text-lg font-semibold text-purple-600">{country.region}</p>
+            </div>
+            <div class="p-4 bg-orange-50 rounded-lg">
+              <h3 class="font-semibold text-orange-900 mb-2">Timezone</h3>
+              <p class="text-lg font-semibold text-orange-600">{timezone}</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Currency and Population Information -->
+        {countryInfo && (countryInfo.currency || countryInfo.population) && (
+          <section class="bg-white rounded-lg shadow-sm p-6">
+            <h2 class="text-2xl font-semibold text-gray-900 mb-4">Economic & Demographic Information</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {countryInfo.currency && (
+                <div class="p-4 bg-emerald-50 rounded-lg">
+                  <h3 class="font-semibold text-emerald-900 mb-2">Currency</h3>
+                  <p class="text-lg font-semibold text-emerald-600">
+                    {countryInfo.currency}
+                    {countryInfo.currencySymbol && (
+                      <span class="ml-2 text-2xl">{countryInfo.currencySymbol}</span>
+                    )}
+                  </p>
+                </div>
+              )}
+              {countryInfo.population && (
+                <div class="p-4 bg-rose-50 rounded-lg">
+                  <h3 class="font-semibold text-rose-900 mb-2">Population</h3>
+                  <p class="text-lg font-semibold text-rose-600">
+                    {countryInfo.population.toLocaleString()}
+                  </p>
+                </div>
+              )}
+              {countryInfo.capital && (
+                <div class="p-4 bg-cyan-50 rounded-lg">
+                  <h3 class="font-semibold text-cyan-900 mb-2">Capital</h3>
+                  <p class="text-lg font-semibold text-cyan-600">{countryInfo.capital}</p>
+                </div>
+              )}
+              {countryInfo.languages && (
+                <div class="p-4 bg-amber-50 rounded-lg">
+                  <h3 class="font-semibold text-amber-900 mb-2">Languages</h3>
+                  <p class="text-lg font-semibold text-amber-600">{countryInfo.languages}</p>
+                </div>
+              )}
+            </div>
+          </section>
+        )}
+
+        <!-- Time Information -->
+        {timeInfo && (
+          <section class="bg-white rounded-lg shadow-sm p-6">
+            <h2 class="text-2xl font-semibold text-gray-900 mb-4">Time Information</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="p-4 bg-indigo-50 rounded-lg">
+                <h3 class="font-semibold text-indigo-900 mb-2">Current Time</h3>
+                <p class="text-xl font-bold text-indigo-600">{timeInfo.currentTime}</p>
+              </div>
+              <div class="p-4 bg-teal-50 rounded-lg">
+                <h3 class="font-semibold text-teal-900 mb-2">UTC Offset</h3>
+                <p class="text-lg font-semibold text-teal-600">{timeInfo.utcOffset}</p>
+              </div>
+            </div>
+          </section>
+        )}
+
+        <!-- Wikipedia Information -->
+        {wikipediaInfo && (
+          <section class="bg-white rounded-lg shadow-sm p-6">
+            <h2 class="text-2xl font-semibold text-gray-900 mb-4">Wikipedia Information</h2>
+            <div class="prose max-w-none">
+              {wikipediaInfo.thumbnail && (
+                <img 
+                  src={wikipediaInfo.thumbnail.source}
+                  alt={wikipediaInfo.title}
+                  class="float-right ml-4 mb-4 w-64 h-48 object-cover rounded-lg shadow-sm"
+                  loading="lazy"
+                >
+              )}
+              <p class="text-gray-700 leading-relaxed mb-4">{wikipediaInfo.extract}</p>
+              <a 
+                href={wikipediaInfo.pageUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium"
+              >
+                Read more on Wikipedia
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                </svg>
+              </a>
+            </div>
+          </section>
+        )}
+      </div>
+
+      <!-- Sidebar -->
+      <div class="space-y-6">
+        <!-- Quick Actions -->
+        <section class="bg-white rounded-lg shadow-sm p-6">
+          <h3 class="text-lg font-semibold text-gray-900 mb-4">Quick Actions</h3>
+          <div class="space-y-3">
+            <a 
+              href="/"
+              class="block w-full px-4 py-2 bg-blue-600 text-white text-center rounded-lg hover:bg-blue-700 transition-colors"
+            >
+              Back to Map
+            </a>
+            <button 
+              onclick="navigator.share && navigator.share({title: document.title, url: window.location.href})"
+              class="block w-full px-4 py-2 bg-gray-600 text-white text-center rounded-lg hover:bg-gray-700 transition-colors"
+            >
+              Share This Page
+            </button>
+          </div>
+        </section>
+
+        <!-- Related Countries -->
+        <section class="bg-white rounded-lg shadow-sm p-6">
+          <h3 class="text-lg font-semibold text-gray-900 mb-4">Related Countries</h3>
+          <div class="space-y-2">
+            {callingCodes
+              .filter(c => c.region === country.region && c.iso2 !== country.iso2)
+              .slice(0, 5)
+              .map(relatedCountry => (
+                <a 
+                  href={`/country/${relatedCountry.iso2.toLowerCase()}`}
+                  class="block p-3 rounded-lg hover:bg-gray-50 transition-colors"
+                >
+                  <div class="flex items-center space-x-3">
+                    <img 
+                      src={`https://flagcdn.com/w40/${relatedCountry.iso2.toLowerCase()}.png`}
+                      alt={`${relatedCountry.name} flag`}
+                      class="w-6 h-4 object-cover rounded"
+                      loading="lazy"
+                    >
+                    <div>
+                      <p class="font-medium text-gray-900">{relatedCountry.name}</p>
+                      <p class="text-sm text-gray-500">{relatedCountry.callingCode}</p>
+                    </div>
+                  </div>
+                </a>
+              ))
+            }
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</BaseLayout>

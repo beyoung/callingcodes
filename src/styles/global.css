@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 自定义样式 */
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  body {
+    @apply bg-gray-50 text-gray-900;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+  }
+  
+  .card {
+    @apply bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200;
+  }
+  
+  .input-field {
+    @apply w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent;
+  }
+}
+
+/* 地图相关样式 */
+.map-container {
+  @apply relative w-full h-screen bg-gradient-to-br from-blue-50 to-indigo-100;
+}
+
+.region-card {
+  @apply bg-white/90 backdrop-blur-sm rounded-lg shadow-lg p-4 border border-white/20 hover:bg-white/95 transition-all duration-200;
+}
+
+.country-info-panel {
+  @apply bg-white/95 backdrop-blur-sm rounded-lg shadow-xl p-6 border border-white/30;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .map-container {
+    @apply h-screen;
+  }
+  
+  .region-card {
+    @apply p-3 text-sm;
+  }
+  
+  .country-info-panel {
+    @apply p-4 text-sm;
+  }
+}

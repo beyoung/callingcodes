@@ -1,0 +1,326 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const title = "About Us - Global Calling Codes Map";
+const description = "Learn about the Global Calling Codes Map project background, features, and usage. We are committed to providing accurate and convenient international communication information services.";
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "About Global Calling Codes Map",
+  "description": description,
+  "mainEntity": {
+    "@type": "Organization",
+    "name": "Global Calling Codes Map",
+    "description": "Online service providing global country phone code information",
+    "url": "https://callingcodes.ayamap.com"
+  }
+};
+---
+
+<BaseLayout 
+  title={title} 
+  description={description}
+  keywords="about us,project introduction,global calling codes map,international communication,user guide"
+  structuredData={structuredData}
+>
+  <Header />
+  
+  <main class="container mx-auto px-4 py-8 max-w-4xl">
+    <!-- Hero Section -->
+    <section class="text-center mb-12">
+      <h1 class="text-4xl font-bold text-gray-900 mb-4">About Global Calling Codes Map</h1>
+      <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        We are committed to providing users with accurate and convenient global phone code information services, making international communication simpler.
+      </p>
+    </section>
+
+    <!-- Project Introduction -->
+    <section class="bg-white rounded-lg shadow-sm p-8 mb-8">
+      <h2 class="text-2xl font-semibold text-gray-900 mb-6">Project Introduction</h2>
+      <div class="prose max-w-none text-gray-700 leading-relaxed">
+        <p class="mb-4">
+          Global Calling Codes Map is a professional international phone code lookup platform that helps users quickly find phone code information for any country or region through an interactive world map and intelligent search functionality.
+        </p>
+        <p class="mb-4">
+          Whether you are a business professional needing to make international calls or a traveler wanting to understand communication information for your destination, we can provide you with accurate and timely data support.
+        </p>
+        <p>
+          Our data sources are authoritative and reliable, regularly updated to ensure we provide users with the latest and most accurate information.
+        </p>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="bg-white rounded-lg shadow-sm p-8 mb-8">
+      <h2 class="text-2xl font-semibold text-gray-900 mb-6">Features</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Interactive World Map</h3>
+            <p class="text-gray-600">Click on any country on the map to view detailed calling code information and country profiles.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Smart Search</h3>
+            <p class="text-gray-600">Support quick search by country name, Chinese name, or calling code to find the information you need.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+            <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Real-time Time Display</h3>
+            <p class="text-gray-600">Display current time and timezone information for each country to help you choose the right time to call.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
+            <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6-4h6m2 5.291A7.962 7.962 0 0112 15c-2.34 0-4.47-.881-6.08-2.33"></path>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Detailed Country Information</h3>
+            <p class="text-gray-600">Integrated with Wikipedia data to provide rich country background information and image resources.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
+            <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Responsive Design</h3>
+            <p class="text-gray-600">Perfect adaptation to desktop and mobile devices, allowing you to query calling code information anytime, anywhere.</p>
+          </div>
+        </div>
+
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center">
+            <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Fast Loading</h3>
+            <p class="text-gray-600">Uses modern technology stack to ensure fast page loading and smooth user experience.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How to Use -->
+    <section class="bg-white rounded-lg shadow-sm p-8 mb-8">
+      <h2 class="text-2xl font-semibold text-gray-900 mb-6">How to Use</h2>
+      <div class="space-y-6">
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-semibold">
+            1
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Map Query</h3>
+            <p class="text-gray-600">
+              Click on any country on the interactive map on the homepage to view detailed information about that country in the right panel, including phone codes, time zones, Wikipedia introduction, and more.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-semibold">
+            2
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Search Function</h3>
+            <p class="text-gray-600">
+              Use the search box at the top of the page to enter country names (Chinese or English) or calling codes for quick lookup. Search results are displayed in real-time, click to view detailed information.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-semibold">
+            3
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Country List</h3>
+            <p class="text-gray-600">
+              Visit the "All Countries" page to browse the complete list of countries. Support filtering by region, searching, and sorting to help you quickly find your target country.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-start space-x-4">
+          <div class="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-semibold">
+            4
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900 mb-2">Dialing Guide</h3>
+            <p class="text-gray-600">
+              Each country page provides detailed dialing instructions, including complete format for calling from China and important notes to ensure you can successfully make international calls.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Info -->
+    <section class="bg-white rounded-lg shadow-sm p-8 mb-8">
+      <h2 class="text-2xl font-semibold text-gray-900 mb-6">Technical Implementation</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-3">Frontend Technologies</h3>
+          <ul class="space-y-2 text-gray-600">
+            <li class="flex items-center space-x-2">
+              <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span>Astro - Modern static site generator</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span>TypeScript - Type-safe JavaScript</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span>Tailwind CSS - Utility-first CSS framework</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span>D3.js - Data-driven map visualization</span>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-3">Data Sources</h3>
+          <ul class="space-y-2 text-gray-600">
+            <li class="flex items-center space-x-2">
+              <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span>ITU International Telecommunication Union official data</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span>Wikipedia API - Detailed country information</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span>World Time API - Real-time timezone information</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <span>Flag CDN - High-quality flag images</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact & Feedback -->
+    <section class="bg-white rounded-lg shadow-sm p-8 mb-8">
+      <h2 class="text-2xl font-semibold text-gray-900 mb-6">Contact Us</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-4">Feedback & Suggestions</h3>
+          <p class="text-gray-600 mb-4">
+            If you encounter any issues during use or have suggestions for improvement, please contact us through the following methods:
+          </p>
+          <div class="space-y-2">
+            <div class="flex items-center space-x-3">
+              <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+              </svg>
+              <span class="text-gray-600">Email: callingcodes@ayamap.com</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-4">Data Updates</h3>
+          <p class="text-gray-600 mb-4">
+            Our data is regularly updated to ensure accuracy and timeliness:
+          </p>
+          <div class="space-y-2">
+            <div class="flex items-center space-x-3">
+              <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-600">Calling codes: Updated monthly</span>
+            </div>
+            <div class="flex items-center space-x-3">
+              <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+              <span class="text-gray-600">Timezone information: Real-time updates</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="bg-white rounded-lg shadow-sm p-8">
+      <h2 class="text-2xl font-semibold text-gray-900 mb-6">Frequently Asked Questions</h2>
+      <div class="space-y-6">
+        <div class="border-b border-gray-200 pb-6">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">How to make international calls?</h3>
+          <p class="text-gray-600">
+            To make international calls from China, first dial "00" (international access code), then dial the target country's calling code (without the + sign), and finally dial the local phone number. For example, to call a US number: 00-1-local number.
+          </p>
+        </div>
+        <div class="border-b border-gray-200 pb-6">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Why do some countries have multiple calling codes?</h3>
+          <p class="text-gray-600">
+            Some large countries may have multiple calling codes, usually due to historical reasons or geographical divisions. Our database displays the main calling codes. Please refer to local carrier guidance for specific usage.
+          </p>
+        </div>
+        <div class="border-b border-gray-200 pb-6">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Is the time information accurate?</h3>
+          <p class="text-gray-600">
+            Our time information is obtained in real-time through authoritative time APIs, considering factors such as daylight saving time, with high accuracy. However, we recommend confirming the local time again before important calls.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Are the data sources reliable?</h3>
+          <p class="text-gray-600">
+            Our data comes from authoritative institutions such as the ITU International Telecommunication Union and is regularly updated. All information is for reference only. Please refer to the latest regulations of local carriers for actual use.
+          </p>
+        </div>
+      </div>
+    </section></div>
+  </main>
+  <Footer />
+</BaseLayout>

@@ -1,0 +1,525 @@
+<div id="country-panel" class="fixed right-0 top-0 h-full w-96 bg-white shadow-2xl transform transition-transform duration-300 ease-in-out z-50 translate-x-full overflow-hidden">
+  <!-- Panel Header -->
+  <div class="flex items-center justify-between p-4 border-b border-gray-200 bg-gray-50 flex-shrink-0">
+    <h2 class="text-lg font-semibold text-gray-900">Country Information</h2>
+    <button id="close-panel" class="p-2 hover:bg-gray-200 rounded-full transition-colors" aria-label="Close panel">
+      <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Panel Content -->
+  <div class="flex-1 overflow-y-auto h-full"
+       style="height: calc(100% - 73px);"
+       >
+    <!-- Loading State -->
+    <div id="panel-loading" class="hidden p-6">
+      <div class="animate-pulse">
+        <div class="h-4 bg-gray-200 rounded w-3/4 mb-4"></div>
+        <div class="h-4 bg-gray-200 rounded w-1/2 mb-4"></div>
+        <div class="h-4 bg-gray-200 rounded w-2/3"></div>
+      </div>
+    </div>
+
+    <!-- Empty State -->
+    <div id="panel-empty" class="p-6 text-center text-gray-500">
+      <svg class="w-16 h-16 mx-auto mb-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+      </svg>
+      <p class="text-lg font-medium mb-2">Select a Country</p>
+      <p class="text-sm">Click on a country on the map or use the search function to view detailed information</p>
+    </div>
+
+    <!-- Country Content -->
+    <div id="panel-content" class="hidden">
+      <!-- Country Flag and Basic Info -->
+      <div class="p-6 border-b border-gray-200">
+        <div class="flex items-center space-x-4 mb-4">
+          <div id="country-flag" class="w-16 h-12 bg-gray-200 rounded border overflow-hidden">
+            <!-- Flag will be loaded here -->
+          </div>
+          <div>
+            <h3 id="country-name" class="text-xl font-bold text-gray-900"></h3>
+            <!-- <p id="country-name-zh" class="text-sm text-gray-600"></p> -->
+          </div>
+        </div>
+        
+        <!-- Quick Stats -->
+        <div class="grid grid-cols-2 gap-4">
+          <div class="bg-blue-50 p-3 rounded-lg">
+            <div class="text-2xl font-bold text-blue-600" id="calling-code"></div>
+            <div class="text-sm text-blue-800">Phone Code</div>
+          </div>
+          <div class="bg-green-50 p-3 rounded-lg">
+            <div class="text-lg font-semibold text-green-600" id="country-code"></div>
+            <div class="text-sm text-green-800">Country Code</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Detailed Information -->
+      <div class="p-6 space-y-6">
+        <!-- Basic Information -->
+        <div>
+          <h4 class="text-lg font-semibold text-gray-900 mb-3">Basic Information</h4>
+          <div class="space-y-2">
+            <div class="flex justify-between">
+              <span class="text-gray-600">Region:</span>
+              <span id="country-region" class="font-medium"></span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-600">ISO2 Code:</span>
+              <span id="country-iso2" class="font-medium font-mono"></span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-600">ISO3 Code:</span>
+              <span id="country-iso3" class="font-medium font-mono"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Time Information -->
+        <div>
+          <h4 class="text-lg font-semibold text-gray-900 mb-3">Time Information</h4>
+          <div class="space-y-2">
+            <div class="flex justify-between">
+              <span class="text-gray-600">Time Zone:</span>
+              <span id="country-timezone" class="font-medium"></span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-600">Current Time:</span>
+              <span id="country-current-time" class="font-medium"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Country Details -->
+        <div>
+          <h4 class="text-lg font-semibold text-gray-900 mb-3">Country Details</h4>
+          <div class="space-y-2">
+            <div class="flex justify-between">
+              <span class="text-gray-600">Capital:</span>
+              <span id="country-capital" class="font-medium"></span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-600">Currency:</span>
+              <span id="country-currency" class="font-medium"></span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-600">Currency Symbol:</span>
+              <span id="country-currency-symbol" class="font-medium text-lg"></span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-600">Languages:</span>
+              <span id="country-languages" class="font-medium"></span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-600">Population:</span>
+              <span id="country-population" class="font-medium"></span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-gray-600">Area:</span>
+              <span id="country-area" class="font-medium"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Wikipedia Information -->
+        <div>
+          <h4 class="text-lg font-semibold text-gray-900 mb-3">Wikipedia Information</h4>
+          <div id="wikipedia-content" class="space-y-3">
+            <div id="wikipedia-loading" class="text-center py-4 hidden">
+              <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto"></div>
+              <p class="text-sm text-gray-600 mt-2">Fetching Wikipedia information via API</p>
+            </div>
+            <div id="wikipedia-info" class="hidden">
+              <p id="wikipedia-extract" class="text-sm text-gray-700 leading-relaxed"></p>
+              <a id="wikipedia-link" href="#" target="_blank" class="inline-flex items-center text-blue-600 hover:text-blue-800 text-sm mt-2">
+                <span>View more on Wikipedia</span>
+                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                </svg>
+              </a>
+            </div>
+            <div id="wikipedia-empty" class="text-center py-4 text-gray-500 hidden">
+              <p class="text-sm">No Wikipedia information available</p>
+            </div>
+            <div id="wikipedia-error" class="text-center py-4 text-red-500 hidden">
+              <p class="text-sm">Unable to load Wikipedia information</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex gap-3 pt-4 border-t border-gray-200">
+          <a id="detail-link" href="#" class="flex-1 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors text-center text-sm font-medium">
+            View Detail Page
+          </a>
+          <button id="share-button" class="px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors text-sm font-medium">
+            Share
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Overlay for mobile -->
+<div id="panel-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden lg:hidden"></div>
+
+<script>
+  import { COUNTRY_TIMEZONES } from '../utils/wikipedia';
+  import { callingCodes } from '../data/calling-codes';
+  import { getCountryInfoByCode } from '../data/country-info';
+  
+  class CountryPanel {
+    private panel: HTMLElement | null;
+    private overlay: HTMLElement | null;
+    private isVisible: boolean = false;
+
+    constructor() {
+      this.panel = document.getElementById('country-panel');
+      this.overlay = document.getElementById('panel-overlay');
+      this.init();
+    }
+
+    private init() {
+      // Close button
+      const closeBtn = document.getElementById('close-panel');
+      closeBtn?.addEventListener('click', () => this.hide());
+
+      // Overlay click to close (mobile)
+      this.overlay?.addEventListener('click', () => this.hide());
+
+      // Escape key to close
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && this.isVisible) {
+          this.hide();
+        }
+      });
+
+      // Action buttons
+      const viewPageBtn = document.getElementById('detail-link');
+      const shareBtn = document.getElementById('share-button');
+
+      viewPageBtn?.addEventListener('click', (e) => {
+        e.preventDefault();
+        this.viewCountryPage();
+      });
+      shareBtn?.addEventListener('click', () => this.shareCountry());
+    }
+
+    show(countryData: any) {
+      if (!this.panel) return;
+
+      this.isVisible = true;
+      this.panel.classList.remove('translate-x-full');
+      this.panel.classList.add('translate-x-0');
+      
+      // Show overlay on mobile
+      if (window.innerWidth < 1024) {
+        this.overlay?.classList.remove('hidden');
+      }
+
+      // Extract country code from the country object
+      const countryCode = countryData.iso2 || countryData.code || countryData;
+      this.populatePanel(countryCode);
+    }
+
+    hide() {
+      if (!this.panel) return;
+
+      this.isVisible = false;
+      this.panel.classList.remove('translate-x-0');
+      this.panel.classList.add('translate-x-full');
+      
+      // Hide overlay
+      this.overlay?.classList.add('hidden');
+    }
+
+    async populatePanel(countryCode: string) {
+      try {
+        this.showLoading();
+
+        // Find country data from calling codes
+        const countryData = callingCodes.find(country => 
+          country.code === countryCode || 
+          country.iso2 === countryCode || 
+          country.iso3 === countryCode
+        );
+
+        if (!countryData) {
+          throw new Error(`Country not found: ${countryCode}`);
+        }
+
+        // Get detailed country information
+        const countryInfo = getCountryInfoByCode(countryCode);
+
+        // Populate basic information
+        this.setElementText('country-name', countryData.name);
+        this.setElementText('country-name-zh', countryData.nameZh);
+        this.setElementText('calling-code', countryData.callingCode);
+        this.setElementText('country-code', countryData.code);
+        this.setElementText('country-region', countryData.region);
+        this.setElementText('country-iso2', countryData.iso2);
+        this.setElementText('country-iso3', countryData.iso3);
+
+        // Populate detailed information if available
+        if (countryInfo) {
+          this.setElementText('country-capital', countryInfo.capital);
+          this.setElementText('country-currency', countryInfo.currency);
+          this.setElementText('country-currency-symbol', countryInfo.currencySymbol);
+          this.setElementText('country-languages', countryInfo.languages.join(', '));
+          
+          // Format population with commas
+          if (countryInfo.population) {
+            this.setElementText('country-population', countryInfo.population.toLocaleString());
+          } else {
+            this.setElementText('country-population', 'N/A');
+          }
+          
+          // Format area with commas and unit
+          if (countryInfo.area) {
+            this.setElementText('country-area', `${countryInfo.area.toLocaleString()} km²`);
+          } else {
+            this.setElementText('country-area', 'N/A');
+          }
+        } else {
+          // Fallback values if detailed info not available
+          this.setElementText('country-capital', 'N/A');
+          this.setElementText('country-currency', 'N/A');
+          this.setElementText('country-currency-symbol', 'N/A');
+          this.setElementText('country-languages', 'N/A');
+          this.setElementText('country-population', 'N/A');
+          this.setElementText('country-area', 'N/A');
+        }
+
+        // Load flag
+        await this.loadCountryFlag(countryData.iso2);
+
+        // Load timezone and current time
+        await this.loadTimeInformation(countryData.iso2);
+
+        // Load Wikipedia information
+        await this.loadWikipediaInfo(countryData.name);
+
+        // Show content
+        this.showContent();
+      } catch (error) {
+        console.error('Error populating panel:', error);
+        this.showError();
+      }
+    }
+
+    private showLoading() {
+      document.getElementById('panel-empty')?.classList.add('hidden');
+      document.getElementById('panel-content')?.classList.add('hidden');
+      document.getElementById('panel-loading')?.classList.remove('hidden');
+    }
+
+    private showContent() {
+      document.getElementById('panel-loading')?.classList.add('hidden');
+      document.getElementById('panel-empty')?.classList.add('hidden');
+      document.getElementById('panel-content')?.classList.remove('hidden');
+    }
+
+    private showError() {
+      document.getElementById('panel-loading')?.classList.add('hidden');
+      document.getElementById('panel-content')?.classList.add('hidden');
+      document.getElementById('panel-empty')?.classList.remove('hidden');
+    }
+
+    private setElementText(id: string, text: string) {
+      const element = document.getElementById(id);
+      if (element) {
+        element.textContent = text;
+      }
+    }
+
+    private async loadCountryFlag(countryCode: string) {
+      const flagContainer = document.getElementById('country-flag');
+      if (!flagContainer) return;
+
+      try {
+        // Use a flag API service
+        const flagUrl = `https://flagcdn.com/w80/${countryCode.toLowerCase()}.png`;
+        const img = document.createElement('img');
+        img.src = flagUrl;
+        img.alt = `${countryCode} flag`;
+        img.className = 'w-full h-full object-cover';
+        
+        flagContainer.innerHTML = '';
+        flagContainer.appendChild(img);
+      } catch (error) {
+        console.error('Error loading flag:', error);
+        flagContainer.innerHTML = '<div class="w-full h-full bg-gray-300 flex items-center justify-center text-gray-500 text-xs">Flag</div>';
+      }
+    }
+
+    private async loadTimeInformation(countryCode: string) {
+      try {
+        const timezoneElement = document.getElementById('country-timezone');
+        const currentTimeElement = document.getElementById('country-current-time');
+        
+        // Get timezone for the country
+        const timezone = COUNTRY_TIMEZONES[countryCode] || 'UTC';
+        
+        if (timezoneElement) {
+          // Display timezone name
+          timezoneElement.textContent = timezone;
+        }
+        
+        if (currentTimeElement) {
+          // Get current time in the country's timezone
+          const now = new Date();
+          const options: Intl.DateTimeFormatOptions = {
+            timeZone: timezone,
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: false
+          };
+          
+          try {
+            const localTime = now.toLocaleTimeString('en-US', options);
+            currentTimeElement.textContent = localTime;
+          } catch (error) {
+            // Fallback if timezone is not supported
+            currentTimeElement.textContent = now.toLocaleTimeString();
+          }
+        }
+      } catch (error) {
+        console.error('Error loading time information:', error);
+        
+        // Fallback display
+        const timezoneElement = document.getElementById('country-timezone');
+        const currentTimeElement = document.getElementById('country-current-time');
+        
+        if (timezoneElement) {
+          timezoneElement.textContent = 'UTC';
+        }
+        
+        if (currentTimeElement) {
+          currentTimeElement.textContent = new Date().toLocaleTimeString();
+        }
+      }
+    }
+
+    private async loadWikipediaInfo(countryName: string) {
+      const wikipediaContent = document.getElementById('wikipedia-content');
+      const wikipediaLoading = document.getElementById('wikipedia-loading');
+      const wikipediaInfo = document.getElementById('wikipedia-info');
+      const wikipediaEmpty = document.getElementById('wikipedia-empty');
+      const wikipediaError = document.getElementById('wikipedia-error');
+      
+      if (!wikipediaContent || !wikipediaLoading) return;
+
+      try {
+        // Reset all states first
+        wikipediaLoading.classList.remove('hidden');
+        wikipediaInfo?.classList.add('hidden');
+        wikipediaEmpty?.classList.add('hidden');
+        wikipediaError?.classList.add('hidden');
+        
+        // Clear previous content
+         const extractElement = document.getElementById('wikipedia-extract');
+         const linkElement = document.getElementById('wikipedia-link') as HTMLAnchorElement;
+         if (extractElement) extractElement.textContent = '';
+         if (linkElement) {
+           linkElement.href = '#';
+           linkElement.textContent = '';
+         }
+        
+        // 通过API获取维基百科信息
+        const response = await fetch(`/api/wikipedia?country=${encodeURIComponent(countryName)}`);
+        
+        if (response.ok) {
+          const wikipediaData = await response.json();
+          
+          if (wikipediaData && !wikipediaData.error) {
+            // Update content elements
+            if (extractElement) {
+              extractElement.textContent = wikipediaData.extract || 'No description available';
+            }
+            if (linkElement) {
+               linkElement.href = wikipediaData.pageUrl || '#';
+               linkElement.innerHTML = `
+                 <span>View more on Wikipedia</span>
+                 <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                 </svg>
+               `;
+             }
+            
+            wikipediaInfo?.classList.remove('hidden');
+          } else {
+            wikipediaEmpty?.classList.remove('hidden');
+          }
+        } else {
+          wikipediaError?.classList.remove('hidden');
+        }
+        
+        wikipediaLoading.classList.add('hidden');
+      } catch (error) {
+        console.error('Error loading Wikipedia info:', error);
+        wikipediaError?.classList.remove('hidden');
+        wikipediaLoading.classList.add('hidden');
+      }
+    }
+
+    private viewCountryPage() {
+      const countryCode = document.getElementById('country-iso2')?.textContent;
+      if (countryCode) {
+        window.open(`/country/${countryCode.toLowerCase()}`, '_blank');
+      }
+    }
+
+    private shareCountry() {
+      const countryName = document.getElementById('country-name')?.textContent;
+      const countryCode = document.getElementById('country-iso2')?.textContent;
+      
+      if (navigator.share && countryName && countryCode) {
+        navigator.share({
+          title: `${countryName} - Global Calling Codes Map`,
+        text: `View ${countryName}'s phone code and detailed information`,
+          url: `${window.location.origin}/country/${countryCode.toLowerCase()}`
+        });
+      } else {
+        // Fallback: copy to clipboard
+        const url = `${window.location.origin}/country/${countryCode?.toLowerCase()}`;
+        navigator.clipboard.writeText(url).then(() => {
+          alert('Link copied to clipboard');
+        });
+      }
+    }
+  }
+
+  // Initialize the panel
+  (window as any).countryPanel = new CountryPanel();
+</script>
+
+<style>
+  /* Custom scrollbar for the panel */
+  #country-panel {
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e0 #f7fafc;
+  }
+
+  #country-panel::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  #country-panel::-webkit-scrollbar-track {
+    background: #f7fafc;
+  }
+
+  #country-panel::-webkit-scrollbar-thumb {
+    background: #cbd5e0;
+    border-radius: 3px;
+  }
+
+  #country-panel::-webkit-scrollbar-thumb:hover {
+    background: #a0aec0;
+  }
+</style>

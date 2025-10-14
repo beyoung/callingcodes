@@ -1,0 +1,556 @@
+<!-- World Map Container -->
+<div class="relative w-full overflow-hidden" style="height: calc(100vh - 128px);">
+  <!-- Map SVG Container -->
+  <div id="map-svg-container" class="w-full h-full bg-blue-50 overflow-hidden"></div>
+  
+  <!-- Search Box -->
+  <div class="absolute top-4 left-4 z-10">
+    <div class="relative">
+      <input 
+        type="text" 
+        id="search-input" 
+        placeholder="Search countries..." 
+        class="w-64 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+      />
+      <div id="search-results" class="absolute top-full left-0 w-full mt-1 max-h-60 overflow-y-auto hidden z-20">
+        <!-- Search results will be displayed here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Legend -->
+  <div class="absolute bottom-4 left-4 bg-white rounded-lg shadow-lg p-4">
+    <h4 class="text-sm font-bold text-gray-800 mb-2">Calling Code Distribution</h4>
+    <div class="grid grid-cols-2 gap-2 text-xs">
+      <div class="flex items-center gap-2">
+        <div class="w-4 h-4 bg-blue-500 rounded"></div>
+        <span>+1 North America</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <div class="w-4 h-4 bg-yellow-500 rounded"></div>
+        <span>+2 Africa</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <div class="w-4 h-4 bg-purple-500 rounded"></div>
+        <span>+3 Europe</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <div class="w-4 h-4 bg-red-500 rounded"></div>
+        <span>+4 Europe</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <div class="w-4 h-4 bg-green-500 rounded"></div>
+        <span>+5 South America</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <div class="w-4 h-4 bg-pink-500 rounded"></div>
+        <span>+6 Oceania</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <div class="w-4 h-4 bg-orange-500 rounded"></div>
+        <span>+7 Russia</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <div class="w-4 h-4 bg-cyan-500 rounded"></div>
+        <span>+8/+9 Asia</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  import * as d3 from 'd3';
+  import { callingCodes } from '../data/calling-codes';
+  import type { CountryCallingCode } from '../data/calling-codes';
+
+  // Country data
+  const countryData: { callingCodes: CountryCallingCode[] } = {
+    callingCodes: callingCodes
+  };
+
+  // Color mapping
+  const colorMap: Record<string, string> = {
+    '+1': '#3B82F6', // Blue - North America
+    '+2': '#EAB308', // Yellow - Africa  
+    '+3': '#8B5CF6', // Purple - Europe
+    '+4': '#EF4444', // Red - Europe
+    '+5': '#10B981', // Green - South America
+    '+6': '#EC4899', // Pink - Oceania
+    '+7': '#F97316', // Orange - Russia/Kazakhstan
+    '+8': '#06B6D4', // Cyan - Asia
+    '+9': '#06B6D4', // Cyan - Asia
+  };
+
+  class WorldMap {
+    width: number;
+    height: number;
+    svg: d3.Selection<SVGSVGElement, unknown, null, undefined> | null;
+    projection: d3.GeoProjection | null;
+    path: d3.GeoPath<any, d3.GeoPermissibleObjects> | null;
+    countries: d3.Selection<SVGPathElement, any, SVGSVGElement, unknown> | null;
+    isMouseOverMap: boolean;
+    constructor() {
+      this.width = window.innerWidth;
+      this.height = window.innerHeight;
+      this.svg = null;
+      this.projection = null;
+      this.path = null;
+      this.countries = null;
+      this.isMouseOverMap = false;
+      
+      this.init();
+    }
+
+    async init() {
+      await this.loadData();
+      this.setupSVG();
+      await this.loadWorldData();
+      this.setupInteractions();
+      this.setupSearch();
+    }
+
+    async loadData() {
+      // 使用项目中的数据文件
+      countryData.callingCodes = callingCodes;
+    }
+
+    setupSVG() {
+      const container = document.getElementById('map-svg-container') as HTMLElement | null;
+      if (!container) return;
+
+      this.svg = d3.select(container)
+        .append('svg')
+        .attr('width', this.width)
+        .attr('height', this.height)
+        .style('overflow', 'hidden')
+        .style('display', 'block');
+
+      // 添加剪切路径，确保地图内容不会超出容器边界
+      const defs = this.svg.append('defs');
+      defs.append('clipPath')
+        .attr('id', 'map-clip')
+        .append('rect')
+        .attr('x', 0)
+        .attr('y', 0)
+        .attr('width', this.width)
+        .attr('height', this.height);
+
+      // 创建地图内容组，应用剪切路径
+      this.svg.append('g')
+        .attr('id', 'map-content')
+        .attr('clip-path', 'url(#map-clip)');
+
+      this.projection = d3.geoNaturalEarth1()
+        .scale(150)
+        .translate([this.width / 2, this.height / 2]);
+
+      this.path = d3.geoPath().projection(this.projection);
+    }
+
+    async loadWorldData(): Promise<void> {
+      try {
+        // 加载本地的世界国家 GeoJSON 文件
+        const worldData = await fetch('/world.geojson')
+          .then(r => r.json());
+
+        // 选择地图内容组而不是直接在svg上添加
+        const mapContent = this.svg!.select('#map-content');
+
+        this.countries = mapContent.selectAll('.country')
+          .data(worldData.features)
+          .enter()
+          .append('path')
+          .attr('class', 'country')
+          .attr('d', (d: any) => this.path!(d))
+          .attr('fill', (d: any) => this.getCountryColor(d.properties['iso_a2']))
+          .attr('stroke', '#fff')
+          .attr('stroke-width', 0.5)
+          .style('cursor', 'pointer')
+          .on('click', (event: any, d: any) => this.handleCountryClick(d))
+          .on('mouseover', (event: any, d: any) => this.handleMouseOver(event, d))
+          .on('mouseout', () => this.handleMouseOut());
+
+        // 添加电话区号标签
+        this.addCountryLabels(worldData.features);
+      } catch (error) {
+        console.error('Error loading world data:', error);
+        this.createFallbackMap();
+      }
+    }
+
+    addCountryLabels(features: any[]): void {
+      // 创建标签组，添加到地图内容组中
+      const mapContent = this.svg!.select('#map-content');
+      const labelGroup = mapContent.append('g').attr('class', 'country-labels');
+
+      // For tracking countries with missing data
+      const missingCountries: string[] = [];
+      const matchedCountries: string[] = [];
+
+      // Define mainland centroids for countries with overseas territories (longitude, latitude)
+      const mainlandCentroids: Record<string, [number, number]> = {
+        'FR': [2.2137, 46.2276],    // France mainland
+        'ES': [-3.7492, 40.4637],   // Spain mainland
+        'PT': [-8.2245, 39.3999],   // Portugal mainland
+        'NL': [5.2913, 52.1326],    // Netherlands mainland
+        'DK': [9.5018, 56.2639],    // Denmark mainland
+        'NO': [8.4689, 60.4720],    // Norway mainland
+        'GB': [-3.4360, 55.3781],   // United Kingdom mainland
+        'US': [-95.7129, 37.0902],  // United States mainland
+        'RU': [105.3188, 61.5240],  // Russia mainland
+        'AU': [133.7751, -25.2744], // Australia mainland
+        'NZ': [174.8860, -40.9006], // New Zealand mainland
+        'CL': [-71.5430, -35.6751], // Chile mainland
+        'EC': [-78.1834, -1.8312],  // Ecuador mainland
+      };
+
+      features.forEach((feature: any) => {
+        const countryCode = feature.properties['iso_a2'];
+        const countryName = feature.properties['NAME'] || feature.properties['NAME_EN'] || 'Unknown';
+        const country = countryData.callingCodes.find((c: CountryCallingCode) => c.iso2 === countryCode);
+        
+        if (country && this.path) {
+          matchedCountries.push(`${countryName} (${countryCode}): ${country.callingCode}`);
+          
+          // Calculate country center point - prioritize predefined mainland centroids
+          let centroid: [number, number];
+          if (mainlandCentroids[countryCode]) {
+            // Use predefined mainland centroid, need to convert to screen coordinates through projection
+            const projectedPoint = this.projection!(mainlandCentroids[countryCode]);
+            centroid = projectedPoint || [0, 0];
+          } else {
+            // Use default geometric centroid
+            centroid = this.path.centroid(feature);
+          }
+          
+          // Calculate country area and dynamically adjust label size
+          const bounds = this.path.bounds(feature);
+          const area = (bounds[1][0] - bounds[0][0]) * (bounds[1][1] - bounds[0][1]);
+          
+          // Dynamically adjust label size based on area
+          let radius, fontSize;
+          if (area > 2000) {
+            radius = 15;
+            fontSize = 12;
+          } else if (area > 1000) {
+            radius = 12;
+            fontSize = 10;
+          } else if (area > 500) {
+            radius = 10;
+            fontSize = 9;
+          } else if (area > 200) {
+            radius = 8;
+            fontSize = 8;
+          } else if (area > 50) {
+            radius = 6;
+            fontSize = 7;
+          } else {
+            radius = 5;
+            fontSize = 6;
+          }
+          
+          if (area > 20 && centroid[0] && centroid[1]) { // Further reduce area threshold to show almost all countries
+            // Add background circle
+            labelGroup.append('circle')
+              .attr('cx', centroid[0])
+              .attr('cy', centroid[1])
+              .attr('r', radius)
+              .attr('fill', 'rgba(255, 255, 255, 0.9)')
+              .attr('stroke', '#333')
+              .attr('stroke-width', Math.max(0.5, radius / 15))
+              .attr('class', 'country-label-bg')
+              .attr('data-area', area);
+
+            // Add calling code text
+            labelGroup.append('text')
+              .attr('x', centroid[0])
+              .attr('y', centroid[1])
+              .attr('text-anchor', 'middle')
+              .attr('dominant-baseline', 'central')
+              .attr('font-size', `${fontSize}px`)
+              .attr('font-weight', 'bold')
+              .attr('fill', '#333')
+              .attr('class', 'country-label-text')
+              .attr('data-area', area)
+              .text(country.callingCode.replace('+', ''));
+          }
+        } else {
+          // Record countries with missing data
+          missingCountries.push(`${countryName} (${countryCode})`);
+        }
+      });
+      
+      if (missingCountries.length > 0) {
+        missingCountries.forEach(country => console.log(`- ${country}`));
+      }
+      
+      matchedCountries.slice(0, 10).forEach(country => console.log(`- ${country}`));
+
+      // Add zoom-based label visibility control
+      this.setupLabelVisibility();
+    }
+
+    setupLabelVisibility(): void {
+      // Control label display based on zoom level
+      const zoom = d3.zoom<SVGSVGElement, unknown>()
+        .scaleExtent([0.5, 8])
+        .translateExtent([[0, 0], [this.width, this.height]])
+        .extent([[0, 0], [this.width, this.height]])
+        .filter((event) => {
+          // Only allow zoom when mouse is hovering over the map area
+          return this.isMouseOverMap;
+        })
+        .on('zoom', (event) => {
+          const { transform } = event;
+          
+          // Update country paths
+          if (this.countries) {
+            this.countries.attr('transform', transform);
+          }
+          
+          // Update labels
+          const labels = this.svg!.selectAll('.country-labels');
+          if (labels) {
+            labels.attr('transform', transform);
+            
+            // Adjust label size and visibility based on zoom level
+            const scale = transform.k;
+            labels.selectAll('.country-label-bg')
+              .attr('r', function() {
+                const area = +d3.select(this).attr('data-area');
+                let baseRadius;
+                if (area > 2000) baseRadius = 15;
+                else if (area > 1000) baseRadius = 12;
+                else if (area > 500) baseRadius = 10;
+                else if (area > 200) baseRadius = 8;
+                else if (area > 50) baseRadius = 6;
+                else baseRadius = 5;
+                return baseRadius / scale;
+              })
+              .attr('stroke-width', function() {
+                const area = +d3.select(this).attr('data-area');
+                let baseRadius;
+                if (area > 2000) baseRadius = 15;
+                else if (area > 1000) baseRadius = 12;
+                else if (area > 500) baseRadius = 10;
+                else if (area > 200) baseRadius = 8;
+                else if (area > 50) baseRadius = 6;
+                else baseRadius = 5;
+                return Math.max(0.5, baseRadius / 15) / scale;
+              })
+              .style('opacity', scale > 0.3 ? 1 : 0);
+              
+            labels.selectAll('.country-label-text')
+              .attr('font-size', function() {
+                const area = +d3.select(this).attr('data-area');
+                let baseFontSize;
+                if (area > 2000) baseFontSize = 12;
+                else if (area > 1000) baseFontSize = 10;
+                else if (area > 500) baseFontSize = 9;
+                else if (area > 200) baseFontSize = 8;
+                else if (area > 50) baseFontSize = 7;
+                else baseFontSize = 6;
+                return `${baseFontSize / scale}px`;
+              })
+              .style('opacity', scale > 0.3 ? 1 : 0);
+          }
+        });
+
+      if (this.svg) {
+        this.svg.call(zoom);
+        
+        // Add mouse enter and leave events for map area
+        this.svg
+          .on('mouseenter', () => {
+            this.isMouseOverMap = true;
+          })
+          .on('mouseleave', () => {
+            this.isMouseOverMap = false;
+          });
+      }
+    }
+
+    createFallbackMap() {
+      // Create fallback simple map display
+      this.svg.append('text')
+        .attr('x', this.width / 2)
+        .attr('y', this.height / 2)
+        .attr('text-anchor', 'middle')
+        .attr('font-size', '24px')
+        .attr('fill', '#666')
+        .text('World Calling Codes Map');
+        
+      this.svg.append('text')
+        .attr('x', this.width / 2)
+        .attr('y', this.height / 2 + 40)
+        .attr('text-anchor', 'middle')
+        .attr('font-size', '16px')
+        .attr('fill', '#999')
+        .text('Click the search box to query country calling codes');
+    }
+
+    getCountryColor(countryCode: string): string {
+      const country = countryData.callingCodes.find((c: CountryCallingCode) => c.iso2 === countryCode);
+      if (!country) {
+        return '#E5E7EB';
+      }
+      const prefix: string = country.callingCode.charAt(1);
+      const color = colorMap[`+${prefix}`] || '#E5E7EB';
+      return color;
+    }
+
+    handleCountryClick(d: any) {
+      const countryCode: string = d.properties['iso_a2'];
+      const country = countryData.callingCodes.find((c: CountryCallingCode) => c.iso2 === countryCode);
+      if (country) {
+        // Use global countryPanel instance
+        const panel = (window as any).countryPanel;
+        if (panel) {
+          panel.show(country);
+        }
+      }
+    }
+
+    handleMouseOver(event: MouseEvent, _d: any) {
+      d3.select(event.target as Element)
+        .attr('stroke-width', 2)
+        .attr('stroke', '#333');
+    }
+
+    handleMouseOut() {
+      this.svg?.selectAll('.country')
+        .attr('stroke-width', 0.5)
+        .attr('stroke', '#fff');
+    }
+
+    setupInteractions(): void {
+      const closeBtn = document.getElementById('close-panel');
+      if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+          const panel = document.getElementById('info-panel');
+          if (panel) {
+            panel.classList.add('hidden');
+          }
+        });
+      }
+
+      // Window resize handling
+        window.addEventListener('resize', () => {
+          this.width = window.innerWidth;
+          this.height = window.innerHeight;
+          
+          if (this.svg) {
+            this.svg
+              .attr('width', this.width)
+              .attr('height', this.height);
+          }
+            
+          if (this.projection) {
+            this.projection
+              .scale(150)
+              .translate([this.width / 2, this.height / 2]);
+          }
+            
+          if (this.countries && this.path) {
+            this.countries.attr('d', this.path);
+          }
+        });
+    }
+
+    setupSearch(): void {
+      const searchInput = document.getElementById('search-input') as HTMLInputElement;
+      if (!searchInput) return;
+      
+      searchInput.addEventListener('input', (e) => {
+        const query = (e.target as HTMLInputElement).value.trim();
+        this.performSearch(query);
+      });
+
+      // Click outside to close search results
+      document.addEventListener('click', (e) => {
+        const searchContainer = searchInput.closest('.relative');
+        if (searchContainer && !searchContainer.contains(e.target as Node)) {
+          const searchResults = document.getElementById('search-results');
+          searchResults?.classList.add('hidden');
+        }
+      });
+    }
+
+    performSearch(query: string) {
+      const searchResults = document.getElementById('search-results');
+      if (!searchResults) return;
+      
+      if (query.length === 0) {
+        searchResults.classList.add('hidden');
+        return;
+      }
+
+      const filteredCountries = countryData.callingCodes.filter((country: CountryCallingCode) => 
+        country.name.toLowerCase().includes(query.toLowerCase()) ||
+        country.callingCode.includes(query)
+      );
+
+      if (filteredCountries.length === 0) {
+        searchResults.innerHTML = '<div class="p-3 text-gray-500">No matching countries found</div>';
+      } else {
+        searchResults.innerHTML = filteredCountries.slice(0, 5).map((country: CountryCallingCode) => `
+          <div class="search-result-item p-3 hover:bg-gray-50 cursor-pointer border-b border-gray-100" data-country='${JSON.stringify(country)}'>
+            <div class="font-medium">${country.name}</div>
+            <div class="text-sm text-gray-600"> ${country.callingCode}</div>
+          </div>
+        `).join('');
+
+        const resultItems = searchResults?.querySelectorAll('.search-result-item');
+        if (resultItems) {
+          resultItems.forEach(item => {
+            item.addEventListener('click', () => {
+              const countryData = (item as HTMLElement).dataset.country;
+              if (countryData) {
+                const country = JSON.parse(countryData);
+                // Use global countryPanel instance
+                const panel = (window as any).countryPanel;
+                if (panel) {
+                  panel.show(country);
+                }
+                searchResults?.classList.add('hidden');
+                const searchInput = document.getElementById('search-input') as HTMLInputElement;
+                if (searchInput) {
+                  searchInput.value = '';
+                }
+              }
+            });
+          });
+        }
+      }
+      
+      searchResults.classList.remove('hidden');
+    }
+
+  }
+
+  // Initialize map
+  document.addEventListener('DOMContentLoaded', () => {
+    new WorldMap();
+  });
+</script>
+
+<style>
+  .country {
+    transition: all 0.2s ease;
+  }
+  
+  .country:hover {
+    opacity: 0.8;
+  }
+  
+  #search-results {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.375rem;
+    background: white;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+  
+  .search-result-item:last-child {
+    border-bottom: none;
+  }
+</style>

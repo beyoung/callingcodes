@@ -1,0 +1,88 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  keywords?: string;
+  ogImage?: string;
+  type?: 'website' | 'article';
+  structuredData?: object;
+}
+
+const { 
+  title, 
+  description, 
+  keywords = "phone codes,international codes,global map,calling codes,country codes,timezone,world map",
+  ogImage = "/favicon.webp",
+  type = "website",
+  structuredData
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const fullOgImageURL = new URL(ogImage, Astro.site);
+
+// 默认结构化数据
+const defaultStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Global Calling Codes Map",
+  "description": "Explore phone codes, timezones, and detailed information for countries worldwide",
+  "url": canonicalURL.toString(),
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Web Browser"
+};
+
+const finalStructuredData = structuredData || defaultStructuredData;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content={description} />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/webp" href="/favicon.webp" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="generator" content={Astro.generator} />
+  <title>{title}</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="keywords" content={keywords} />
+  <meta name="author" content="Global Calling Codes Map" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href={canonicalURL} />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content={type} />
+  <meta property="og:url" content={canonicalURL} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={fullOgImageURL} />
+  <meta property="og:site_name" content="Global Calling Codes Map" />
+  <meta property="og:locale" content="en_US" />
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content={canonicalURL} />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={fullOgImageURL} />
+  <meta name="twitter:site" content="@GlobalCallingCodes" />
+  
+  <!-- Additional Meta Tags -->
+  <meta name="theme-color" content="#3B82F6" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Global Calling Codes" />
+  
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json" set:html={JSON.stringify(finalStructuredData)} />
+</head>
+
+<body class="min-h-screen bg-gray-50">
+  <slot />
+</body>
+</html>

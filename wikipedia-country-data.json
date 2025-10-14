@@ -1,0 +1,2072 @@
+[
+  {
+    "code": "CN",
+    "name": "China",
+    "title": "China",
+    "timezone": "UTC+08:00",
+    "capital": "Beijing",
+    "currency": "Renminbi",
+    "currencySymbol": "¥",
+    "languages": "Standard Chinese (Mandarin)"
+  },
+  {
+    "code": "US",
+    "name": "United States",
+    "title": "United States",
+    "timezone": "Multiple (e.g., UTC-05:00 to UTC-10:00)",
+    "capital": "Washington, D.C.",
+    "currency": "United States dollar",
+    "currencySymbol": "$",
+    "languages": "English"
+  },
+  {
+    "code": "JP",
+    "name": "Japan",
+    "title": "Japan",
+    "timezone": "UTC+09:00",
+    "capital": "Tokyo",
+    "currency": "Japanese yen",
+    "currencySymbol": "¥",
+    "languages": "Japanese"
+  },
+  {
+    "code": "GB",
+    "name": "United Kingdom",
+    "title": "United Kingdom",
+    "timezone": "UTC+00:00",
+    "capital": "London",
+    "currency": "Pound sterling",
+    "currencySymbol": "£",
+    "languages": "English"
+  },
+  {
+    "code": "DE",
+    "name": "Germany",
+    "title": "Germany",
+    "timezone": "UTC+01:00",
+    "capital": "Berlin",
+    "currency": "Euro",
+    "currencySymbol": "€",
+    "languages": "German"
+  },
+  {
+    "code": "FR",
+    "name": "France",
+    "title": "France",
+    "timezone": "UTC+01:00",
+    "capital": "Paris",
+    "currency": "Euro",
+    "currencySymbol": "€",
+    "languages": "French"
+  },
+  {
+    "code": "RU",
+    "name": "Russia",
+    "title": "Russia",
+    "timezone": "Multiple (e.g., UTC+02:00 to UTC+12:00)",
+    "capital": "Moscow",
+    "currency": "Russian ruble",
+    "currencySymbol": "₽",
+    "languages": "Russian"
+  },
+  {
+    "code": "IN",
+    "name": "India",
+    "title": "India",
+    "timezone": "UTC+05:30",
+    "capital": "New Delhi",
+    "currency": "Indian rupee",
+    "currencySymbol": "₹",
+    "languages": "Hindi, English"
+  },
+  {
+    "code": "BR",
+    "name": "Brazil",
+    "title": "Brazil",
+    "timezone": "Multiple (e.g., UTC-02:00 to UTC-05:00)",
+    "capital": "Brasília",
+    "currency": "Brazilian real",
+    "currencySymbol": "R$",
+    "languages": "Portuguese"
+  },
+  {
+    "code": "CA",
+    "name": "Canada",
+    "title": "Canada",
+    "timezone": "Multiple (e.g., UTC-03:30 to UTC-08:00)",
+    "capital": "Ottawa",
+    "currency": "Canadian dollar",
+    "currencySymbol": "C$",
+    "languages": "English, French"
+  },
+  {
+    "code": "AU",
+    "name": "Australia",
+    "title": "Australia",
+    "timezone": "Multiple (e.g., UTC+08:00, UTC+09:30, UTC+10:00)",
+    "capital": "Canberra",
+    "currency": "Australian dollar",
+    "currencySymbol": "A$",
+    "languages": "English"
+  },
+  {
+    "code": "KR",
+    "name": "South Korea",
+    "title": "South Korea",
+    "timezone": "UTC+09:00",
+    "capital": "Seoul",
+    "currency": "South Korean won",
+    "currencySymbol": "₩",
+    "languages": "Korean"
+  },
+  {
+    "code": "IT",
+    "name": "Italy",
+    "title": "Italy",
+    "timezone": "UTC+01:00",
+    "capital": "Rome",
+    "currency": "Euro",
+    "currencySymbol": "€",
+    "languages": "Italian"
+  },
+  {
+    "code": "ES",
+    "name": "Spain",
+    "title": "Spain",
+    "timezone": "UTC+01:00",
+    "capital": "Madrid",
+    "currency": "Euro",
+    "currencySymbol": "€",
+    "languages": "Spanish"
+  },
+  {
+    "code": "MX",
+    "name": "Mexico",
+    "title": "Mexico",
+    "timezone": "Multiple (e.g., UTC-05:00 to UTC-08:00)",
+    "capital": "Mexico City",
+    "currency": "Mexican peso",
+    "currencySymbol": "MX$",
+    "languages": "Spanish"
+  },
+  {
+    "code": "ID",
+    "name": "Indonesia",
+    "title": "Indonesia",
+    "timezone": "Multiple (e.g., UTC+07:00, UTC+08:00, UTC+09:00)",
+    "capital": "Jakarta",
+    "currency": "Indonesian rupiah",
+    "currencySymbol": "Rp",
+    "languages": "Indonesian"
+  },
+  {
+    "code": "NL",
+    "name": "Netherlands",
+    "title": "Netherlands",
+    "timezone": "UTC+01:00",
+    "capital": "Amsterdam (Official)",
+    "currency": "Euro",
+    "currencySymbol": "€",
+    "languages": "Dutch"
+  },
+  {
+    "code": "TR",
+    "name": "Turkey",
+    "title": "Turkey",
+    "timezone": "UTC+03:00",
+    "capital": "Ankara",
+    "currency": "Turkish lira",
+    "currencySymbol": "₺",
+    "languages": "Turkish"
+  },
+  {
+    "code": "SA",
+    "name": "Saudi Arabia",
+    "title": "Saudi Arabia",
+    "timezone": "UTC+03:00",
+    "capital": "Riyadh",
+    "currency": "Saudi riyal",
+    "currencySymbol": "﷼",
+    "languages": "Modern Standard Arabic"
+  },
+  {
+    "code": "CH",
+    "name": "Switzerland",
+    "title": "Switzerland",
+    "timezone": "UTC+01:00",
+    "capital": "Bern (De Facto)",
+    "currency": "Swiss franc",
+    "currencySymbol": "CHF",
+    "languages": "German, French, Italian"
+  },
+  {
+    "code": "TW",
+    "name": "Taiwan",
+    "title": "Taiwan",
+    "timezone": "UTC+08:00",
+    "capital": "Taipei",
+    "currency": "New Taiwan dollar",
+    "currencySymbol": "NT$",
+    "languages": "Standard Chinese"
+  },
+  {
+    "code": "BE",
+    "name": "Belgium",
+    "title": "Belgium",
+    "timezone": "UTC+01:00",
+    "capital": "Brussels",
+    "currency": "Euro",
+    "currencySymbol": "€",
+    "languages": "Dutch, French, German"
+  },
+  {
+    "code": "IR",
+    "name": "Iran",
+    "title": "Iran",
+    "timezone": "UTC+03:30",
+    "capital": "Tehran",
+    "currency": "Iranian Rial",
+    "currencySymbol": "﷼",
+    "languages": "Persian (Farsi)"
+  },
+  {
+    "code": "IE",
+    "name": "Ireland",
+    "title": "Ireland",
+    "timezone": "UTC+00:00",
+    "capital": "Dublin",
+    "currency": "Euro",
+    "currencySymbol": "€",
+    "languages": "Irish, English"
+  },
+  {
+    "code": "IL",
+    "name": "Israel",
+    "title": "Israel",
+    "timezone": "UTC+02:00",
+    "capital": "Jerusalem",
+    "currency": "Israeli new shekel",
+    "currencySymbol": "₪",
+    "languages": "Hebrew, Arabic"
+  },
+  {
+    "code": "MY",
+    "name": "Malaysia",
+    "title": "Malaysia",
+    "timezone": "UTC+08:00",
+    "capital": "Kuala Lumpur",
+    "currency": "Malaysian ringgit",
+    "currencySymbol": "RM",
+    "languages": "Malaysian Malay"
+  },
+  {
+    "code": "PH",
+    "name": "Philippines",
+    "title": "Philippines",
+    "timezone": "UTC+08:00",
+    "capital": "Manila",
+    "currency": "Philippine peso",
+    "currencySymbol": "₱",
+    "languages": "Filipino, English"
+  },
+  {
+    "code": "SG",
+    "name": "Singapore",
+    "title": "Singapore",
+    "timezone": "UTC+08:00",
+    "capital": "Singapore",
+    "currency": "Singapore dollar",
+    "currencySymbol": "S$",
+    "languages": "English, Malay, Mandarin Chinese, Tamil"
+  },
+  {
+    "code": "TH",
+    "name": "Thailand",
+    "title": "Thailand",
+    "timezone": "UTC+07:00",
+    "capital": "Bangkok",
+    "currency": "Thai baht",
+    "currencySymbol": "฿",
+    "languages": "Thai"
+  },
+  {
+    "code": "VN",
+    "name": "Vietnam",
+    "title": "Vietnam",
+    "timezone": "UTC+07:00",
+    "capital": "Hanoi",
+    "currency": "Vietnamese đồng",
+    "currencySymbol": "₫",
+    "languages": "Vietnamese"
+  },
+  {
+    "code": "AR",
+    "name": "Argentina",
+    "title": "Argentina",
+    "timezone": "UTC-03:00",
+    "capital": "Buenos Aires",
+    "currency": "Argentine peso",
+    "currencySymbol": "$",
+    "languages": "Spanish"
+  },
+  {
+    "code": "CL",
+    "name": "Chile",
+    "title": "Chile",
+    "timezone": "Multiple (e.g., UTC-03:00, UTC-04:00, UTC-06:00)",
+    "capital": "Santiago",
+    "currency": "Chilean peso",
+    "currencySymbol": "CLP$",
+    "languages": "Spanish"
+  },
+  {
+    "code": "CO",
+    "name": "Colombia",
+    "title": "Colombia",
+    "timezone": "UTC-05:00",
+    "capital": "Bogotá",
+    "currency": "Colombian peso",
+    "currencySymbol": "COP$",
+    "languages": "Spanish"
+  },
+  {
+    "code": "PE",
+    "name": "Peru",
+    "title": "Peru",
+    "timezone": "UTC-05:00",
+    "capital": "Lima",
+    "currency": "Peruvian sol",
+    "currencySymbol": "S/",
+    "languages": "Spanish"
+  },
+  {
+    "code": "EG",
+    "name": "Egypt",
+    "title": "Egypt",
+    "timezone": "UTC+02:00",
+    "capital": "Cairo",
+    "currency": "Egyptian pound",
+    "currencySymbol": "E£",
+    "languages": "Modern Standard Arabic"
+  },
+  {
+    "code": "ZA",
+    "name": "South Africa",
+    "title": "South Africa",
+    "timezone": "UTC+02:00",
+    "capital": "Pretoria (Executive), Cape Town (Legislative), Bloemfontein (Judicial)",
+    "currency": "South African rand",
+    "currencySymbol": "R",
+    "languages": "Multiple (English, Afrikaans, Zulu, etc.)"
+  },
+  {
+    "code": "NG",
+    "name": "Nigeria",
+    "title": "Nigeria",
+    "timezone": "UTC+01:00",
+    "capital": "Abuja",
+    "currency": "Nigerian naira",
+    "currencySymbol": "₦",
+    "languages": "English"
+  },
+  {
+    "code": "KE",
+    "name": "Kenya",
+    "title": "Kenya",
+    "timezone": "UTC+03:00",
+    "capital": "Nairobi",
+    "currency": "Kenyan shilling",
+    "currencySymbol": "KSh",
+    "languages": "Swahili, English"
+  },
+  {
+    "code": "NZ",
+    "name": "New Zealand",
+    "title": "New Zealand",
+    "timezone": "UTC+12:00",
+    "capital": "Wellington",
+    "currency": "New Zealand dollar",
+    "currencySymbol": "NZ$",
+    "languages": "English, Māori"
+  },
+  {
+    "code": "NO",
+    "name": "Norway",
+    "title": "Norway",
+    "timezone": "UTC+01:00",
+    "capital": "Oslo",
+    "currency": "Norwegian krone",
+    "currencySymbol": "kr",
+    "languages": "Norwegian"
+  },
+  {
+    "code": "SE",
+    "name": "Sweden",
+    "title": "Sweden",
+    "timezone": "UTC+01:00",
+    "capital": "Stockholm",
+    "currency": "Swedish krona",
+    "currencySymbol": "kr",
+    "languages": "Swedish"
+  },
+  {
+    "code": "DK",
+    "name": "Denmark",
+    "title": "Denmark",
+    "timezone": "UTC+01:00",
+    "capital": "Copenhagen",
+    "currency": "Danish krone",
+    "currencySymbol": "kr",
+    "languages": "Danish"
+  },
+  {
+    "code": "FI",
+    "name": "Finland",
+    "title": "Finland",
+    "timezone": "UTC+02:00",
+    "capital": "Helsinki",
+    "currency": "Euro",
+    "currencySymbol": "€",
+    "languages": "Finnish, Swedish"
+  },
+  {
+    "code": "PL",
+    "name": "Poland",
+    "title": "Poland",
+    "timezone": "UTC+01:00",
+    "capital": "Warsaw",
+    "currency": "Polish złoty",
+    "currencySymbol": "zł",
+    "languages": "Polish"
+  },
+  {
+    "code": "UA",
+    "name": "Ukraine",
+    "title": "Ukraine",
+    "timezone": "UTC+02:00",
+    "capital": "Kyiv",
+    "currency": "Ukrainian hryvnia",
+    "currencySymbol": "₴",
+    "languages": "Ukrainian"
+  },
+  {
+    "code": "GR",
+    "name": "Greece",
+    "title": "Greece",
+    "timezone": "UTC+02:00",
+    "capital": "Athens",
+    "currency": "Euro",
+    "currencySymbol": "€",
+    "languages": "Greek"
+  },
+  {
+    "code": "PT",
+    "name": "Portugal",
+    "title": "Portugal",
+    "timezone": "UTC+00:00",
+    "capital": "Lisbon",
+    "currency": "Euro",
+    "currencySymbol": "€",
+    "languages": "Portuguese"
+  },
+  {
+    "code": "CZ",
+    "name": "Czech Republic",
+    "title": "Czech Republic",
+    "timezone": "UTC+01:00",
+    "capital": "Prague",
+    "currency": "Czech koruna",
+    "currencySymbol": "Kč",
+    "languages": "Czech"
+  },
+  {
+    "code": "HU",
+    "name": "Hungary",
+    "title": "Hungary",
+    "timezone": "UTC+01:00",
+    "capital": "Budapest",
+    "currency": "Hungarian forint",
+    "currencySymbol": "Ft",
+    "languages": "Hungarian"
+  },
+  {
+    "code": "AT",
+    "name": "Austria",
+    "title": "Austria",
+    "timezone": "UTC+01:00",
+    "capital": "Vienna",
+    "currency": "Euro",
+    "currencySymbol": "€",
+    "languages": "German"
+  },
+  {
+    "code": "RO",
+    "name": "Romania",
+    "title": "Romania",
+    "timezone": "UTC+02:00",
+    "capital": "Bucharest",
+    "currency": "Romanian leu",
+    "currencySymbol": "lei",
+    "languages": "Romanian"
+  },
+  {
+    "code": "BG",
+    "name": "Bulgaria",
+    "title": "Bulgaria",
+    "timezone": "UTC+02:00",
+    "capital": "Sofia",
+    "currency": "Bulgarian lev",
+    "currencySymbol": "лв",
+    "languages": "Bulgarian"
+  },
+  {
+    "code": "HR",
+    "name": "Croatia",
+    "title": "Croatia",
+    "timezone": "UTC+01:00",
+    "capital": "Zagreb",
+    "currency": "Euro",
+    "currencySymbol": "€",
+    "languages": "Croatian"
+  },
+  {
+    "code": "RS",
+    "name": "Serbia",
+    "title": "Serbia",
+    "timezone": "UTC+01:00",
+    "capital": "Belgrade",
+    "currency": "Serbian dinar",
+    "currencySymbol": "дин",
+    "languages": "Serbian"
+  },
+  {
+    "code": "SK",
+    "name": "Slovakia",
+    "title": "Slovakia",
+    "timezone": "UTC+01:00",
+    "capital": "Bratislava",
+    "currency": "Euro",
+    "currencySymbol": "€",
+    "languages": "Slovak"
+  },
+  {
+    "code": "SI",
+    "name": "Slovenia",
+    "title": "Slovenia",
+    "timezone": "UTC+01:00",
+    "capital": "Ljubljana",
+    "currency": "Euro",
+    "currencySymbol": "€",
+    "languages": "Slovene"
+  },
+  {
+    "code": "LT",
+    "name": "Lithuania",
+    "title": "Lithuania",
+    "timezone": "UTC+02:00",
+    "capital": "Vilnius",
+    "currency": "Euro",
+    "currencySymbol": "€",
+    "languages": "Lithuanian"
+  },
+  {
+    "code": "LV",
+    "name": "Latvia",
+    "title": "Latvia",
+    "timezone": "UTC+02:00",
+    "capital": "Riga",
+    "currency": "Euro",
+    "currencySymbol": "€",
+    "languages": "Latvian"
+  },
+  {
+    "code": "EE",
+    "name": "Estonia",
+    "title": "Estonia",
+    "timezone": "UTC+02:00",
+    "capital": "Tallinn",
+    "currency": "Euro",
+    "currencySymbol": "€",
+    "languages": "Estonian"
+  },
+  {
+    "code": "HK",
+    "name": "Hong Kong",
+    "title": "Hong Kong",
+    "timezone": "UTC+08:00",
+    "capital": "Hong Kong",
+    "currency": "Hong Kong dollar",
+    "currencySymbol": "HK$",
+    "languages": "Chinese, English"
+  },
+  {
+    "code": "MO",
+    "name": "Macau",
+    "title": "Macau",
+    "timezone": "UTC+08:00",
+    "capital": "Macau",
+    "currency": "Macanese pataca",
+    "currencySymbol": "MOP$",
+    "languages": "Portuguese, Chinese"
+  },
+  {
+    "code": "MA",
+    "name": "Morocco",
+    "title": "Morocco",
+    "timezone": "UTC+01:00",
+    "capital": "Rabat",
+    "currency": "Moroccan dirham",
+    "currencySymbol": "د.م.",
+    "languages": "Arabic, Berber"
+  },
+  {
+    "code": "DZ",
+    "name": "Algeria",
+    "title": "Algeria",
+    "timezone": "UTC+01:00",
+    "capital": "Algiers",
+    "currency": "Algerian dinar",
+    "currencySymbol": "DA",
+    "languages": "Arabic, Berber"
+  },
+  {
+    "code": "TN",
+    "name": "Tunisia",
+    "title": "Tunisia",
+    "timezone": "UTC+01:00",
+    "capital": "Tunis",
+    "currency": "Tunisian dinar",
+    "currencySymbol": "DT",
+    "languages": "Arabic"
+  },
+  {
+    "code": "LY",
+    "name": "Libya",
+    "title": "Libya",
+    "timezone": "UTC+02:00",
+    "capital": "Tripoli",
+    "currency": "Libyan dinar",
+    "currencySymbol": "LD",
+    "languages": "Arabic"
+  },
+  {
+    "code": "GM",
+    "name": "Gambia",
+    "title": "The Gambia",
+    "timezone": "UTC+00:00",
+    "capital": "Banjul",
+    "currency": "Gambian dalasi",
+    "currencySymbol": "D",
+    "languages": "English"
+  },
+  {
+    "code": "SN",
+    "name": "Senegal",
+    "title": "Senegal",
+    "timezone": "UTC+00:00",
+    "capital": "Dakar",
+    "currency": "West African CFA franc",
+    "currencySymbol": "Fr",
+    "languages": "French"
+  },
+  {
+    "code": "MR",
+    "name": "Mauritania",
+    "title": "Mauritania",
+    "timezone": "UTC+00:00",
+    "capital": "Nouakchott",
+    "currency": "Mauritanian ouguiya",
+    "currencySymbol": "UM",
+    "languages": "Arabic"
+  },
+  {
+    "code": "ML",
+    "name": "Mali",
+    "title": "Mali",
+    "timezone": "UTC+00:00",
+    "capital": "Bamako",
+    "currency": "West African CFA franc",
+    "currencySymbol": "Fr",
+    "languages": "French"
+  },
+  {
+    "code": "GN",
+    "name": "Guinea",
+    "title": "Guinea",
+    "timezone": "UTC+00:00",
+    "capital": "Conakry",
+    "currency": "Guinean franc",
+    "currencySymbol": "Fr",
+    "languages": "French"
+  },
+  {
+    "code": "CI",
+    "name": "Ivory Coast",
+    "title": "Ivory Coast",
+    "timezone": "UTC+00:00",
+    "capital": "Yamoussoukro",
+    "currency": "West African CFA franc",
+    "currencySymbol": "Fr",
+    "languages": "French"
+  },
+  {
+    "code": "BF",
+    "name": "Burkina Faso",
+    "title": "Burkina Faso",
+    "timezone": "UTC+00:00",
+    "capital": "Ouagadougou",
+    "currency": "West African CFA franc",
+    "currencySymbol": "Fr",
+    "languages": "French"
+  },
+  {
+    "code": "NE",
+    "name": "Niger",
+    "title": "Niger",
+    "timezone": "UTC+01:00",
+    "capital": "Niamey",
+    "currency": "West African CFA franc",
+    "currencySymbol": "Fr",
+    "languages": "French"
+  },
+  {
+    "code": "TD",
+    "name": "Chad",
+    "title": "Chad",
+    "timezone": "UTC+01:00",
+    "capital": "N'Djamena",
+    "currency": "Central African CFA franc",
+    "currencySymbol": "Fr",
+    "languages": "French, Arabic"
+  },
+  {
+    "code": "CF",
+    "name": "Central African Republic",
+    "title": "Central African Republic",
+    "timezone": "UTC+01:00",
+    "capital": "Bangui",
+    "currency": "Central African CFA franc",
+    "currencySymbol": "Fr",
+    "languages": "French, Sango"
+  },
+  {
+    "code": "CM",
+    "name": "Cameroon",
+    "title": "Cameroon",
+    "timezone": "UTC+01:00",
+    "capital": "Yaoundé",
+    "currency": "Central African CFA franc",
+    "currencySymbol": "Fr",
+    "languages": "English, French"
+  },
+  {
+    "code": "CV",
+    "name": "Cape Verde",
+    "title": "Cape Verde",
+    "timezone": "UTC-01:00",
+    "capital": "Praia",
+    "currency": "Cape Verdean escudo",
+    "currencySymbol": "Esc",
+    "languages": "Portuguese, Cape Verdean Creole"
+  },
+  {
+    "code": "ST",
+    "name": "São Tomé and Príncipe",
+    "title": "São Tomé and Príncipe",
+    "timezone": "UTC+00:00",
+    "capital": "São Tomé",
+    "currency": "São Tomé and Príncipe dobra",
+    "currencySymbol": "Db",
+    "languages": "Portuguese"
+  },
+  {
+    "code": "GQ",
+    "name": "Equatorial Guinea",
+    "title": "Equatorial Guinea",
+    "timezone": "UTC+01:00",
+    "capital": "Malabo",
+    "currency": "Central African CFA franc",
+    "currencySymbol": "Fr",
+    "languages": "Spanish, French, Portuguese"
+  },
+  {
+    "code": "GA",
+    "name": "Gabon",
+    "title": "Gabon",
+    "timezone": "UTC+01:00",
+    "capital": "Libreville",
+    "currency": "Central African CFA franc",
+    "currencySymbol": "Fr",
+    "languages": "French"
+  },
+  {
+    "code": "CG",
+    "name": "Republic of the Congo",
+    "title": "Republic of the Congo",
+    "timezone": "UTC+01:00",
+    "capital": "Brazzaville",
+    "currency": "Central African CFA franc",
+    "currencySymbol": "Fr",
+    "languages": "French"
+  },
+  {
+    "code": "CD",
+    "name": "Democratic Republic of the Congo",
+    "title": "Democratic Republic of the Congo",
+    "timezone": "Multiple (e.g., UTC+01:00, UTC+02:00)",
+    "capital": "Kinshasa",
+    "currency": "Congolese franc",
+    "currencySymbol": "Fr",
+    "languages": "French"
+  },
+  {
+    "code": "AO",
+    "name": "Angola",
+    "title": "Angola",
+    "timezone": "UTC+01:00",
+    "capital": "Luanda",
+    "currency": "Angolan kwanza",
+    "currencySymbol": "Kz",
+    "languages": "Portuguese"
+  },
+  {
+    "code": "GW",
+    "name": "Guinea-Bissau",
+    "title": "Guinea-Bissau",
+    "timezone": "UTC+00:00",
+    "capital": "Bissau",
+    "currency": "West African CFA franc",
+    "currencySymbol": "Fr",
+    "languages": "Portuguese"
+  },
+  {
+    "code": "SC",
+    "name": "Seychelles",
+    "title": "Seychelles",
+    "timezone": "UTC+04:00",
+    "capital": "Victoria",
+    "currency": "Seychellois rupee",
+    "currencySymbol": "SR",
+    "languages": "Seychellois Creole, English, French"
+  },
+  {
+    "code": "SD",
+    "name": "Sudan",
+    "title": "Sudan",
+    "timezone": "UTC+02:00",
+    "capital": "Khartoum",
+    "currency": "Sudanese pound",
+    "currencySymbol": "£",
+    "languages": "Arabic, English"
+  },
+  {
+    "code": "RW",
+    "name": "Rwanda",
+    "title": "Rwanda",
+    "timezone": "UTC+02:00",
+    "capital": "Kigali",
+    "currency": "Rwandan franc",
+    "currencySymbol": "Fr",
+    "languages": "Kinyarwanda, English, French, Swahili"
+  },
+  {
+    "code": "ET",
+    "name": "Ethiopia",
+    "title": "Ethiopia",
+    "timezone": "UTC+03:00",
+    "capital": "Addis Ababa",
+    "currency": "Ethiopian birr",
+    "currencySymbol": "Br",
+    "languages": "Amharic"
+  },
+  {
+    "code": "SO",
+    "name": "Somalia",
+    "title": "Somalia",
+    "timezone": "UTC+03:00",
+    "capital": "Mogadishu",
+    "currency": "Somali shilling",
+    "currencySymbol": "Sh",
+    "languages": "Somali, Arabic"
+  },
+  {
+    "code": "DJ",
+    "name": "Djibouti",
+    "title": "Djibouti",
+    "timezone": "UTC+03:00",
+    "capital": "Djibouti City",
+    "currency": "Djiboutian franc",
+    "currencySymbol": "Fr",
+    "languages": "French, Arabic"
+  },
+  {
+    "code": "TZ",
+    "name": "Tanzania",
+    "title": "Tanzania",
+    "timezone": "UTC+03:00",
+    "capital": "Dodoma",
+    "currency": "Tanzanian shilling",
+    "currencySymbol": "Sh",
+    "languages": "Swahili, English"
+  },
+  {
+    "code": "UG",
+    "name": "Uganda",
+    "title": "Uganda",
+    "timezone": "UTC+03:00",
+    "capital": "Kampala",
+    "currency": "Ugandan shilling",
+    "currencySymbol": "USh",
+    "languages": "English, Swahili"
+  },
+  {
+    "code": "BI",
+    "name": "Burundi",
+    "title": "Burundi",
+    "timezone": "UTC+02:00",
+    "capital": "Gitega (Political), Bujumbura (Economic)",
+    "currency": "Burundian franc",
+    "currencySymbol": "Fr",
+    "languages": "Kirundi, French, English"
+  },
+  {
+    "code": "MZ",
+    "name": "Mozambique",
+    "title": "Mozambique",
+    "timezone": "UTC+02:00",
+    "capital": "Maputo",
+    "currency": "Mozambican metical",
+    "currencySymbol": "MT",
+    "languages": "Portuguese"
+  },
+  {
+    "code": "ZM",
+    "name": "Zambia",
+    "title": "Zambia",
+    "timezone": "UTC+02:00",
+    "capital": "Lusaka",
+    "currency": "Zambian kwacha",
+    "currencySymbol": "ZK",
+    "languages": "English"
+  },
+  {
+    "code": "MG",
+    "name": "Madagascar",
+    "title": "Madagascar",
+    "timezone": "UTC+03:00",
+    "capital": "Antananarivo",
+    "currency": "Malagasy ariary",
+    "currencySymbol": "Ar",
+    "languages": "Malagasy, French"
+  },
+  {
+    "code": "MU",
+    "name": "Mauritius",
+    "title": "Mauritius",
+    "timezone": "UTC+04:00",
+    "capital": "Port Louis",
+    "currency": "Mauritian rupee",
+    "currencySymbol": "₨",
+    "languages": "English, French (de facto), Mauritian Creole"
+  },
+  {
+    "code": "MW",
+    "name": "Malawi",
+    "title": "Malawi",
+    "timezone": "UTC+02:00",
+    "capital": "Lilongwe",
+    "currency": "Malawian kwacha",
+    "currencySymbol": "MK",
+    "languages": "English, Chichewa"
+  },
+  {
+    "code": "LS",
+    "name": "Lesotho",
+    "title": "Lesotho",
+    "timezone": "UTC+02:00",
+    "capital": "Maseru",
+    "currency": "Lesotho loti, South African rand",
+    "currencySymbol": "L",
+    "languages": "Sesotho, English"
+  },
+  {
+    "code": "BW",
+    "name": "Botswana",
+    "title": "Botswana",
+    "timezone": "UTC+02:00",
+    "capital": "Gaborone",
+    "currency": "Botswana pula",
+    "currencySymbol": "P",
+    "languages": "English, Setswana"
+  },
+  {
+    "code": "SZ",
+    "name": "Eswatini",
+    "title": "Eswatini",
+    "timezone": "UTC+02:00",
+    "capital": "Mbabane (Administrative), Lobamba (Legislative, Royal)",
+    "currency": "Eswatini lilangeni, South African rand",
+    "currencySymbol": "E",
+    "languages": "Swazi, English"
+  },
+  {
+    "code": "KM",
+    "name": "Comoros",
+    "title": "Comoros",
+    "timezone": "UTC+03:00",
+    "capital": "Moroni",
+    "currency": "Comorian franc",
+    "currencySymbol": "Fr",
+    "languages": "Comorian, French, Arabic"
+  },
+  {
+    "code": "GI",
+    "name": "Gibraltar",
+    "title": "Gibraltar",
+    "timezone": "UTC+01:00",
+    "capital": "Gibraltar",
+    "currency": "Gibraltar pound, Pound sterling",
+    "currencySymbol": "£",
+    "languages": "English"
+  },
+  {
+    "code": "LU",
+    "name": "Luxembourg",
+    "title": "Luxembourg",
+    "timezone": "UTC+01:00",
+    "capital": "Luxembourg City",
+    "currency": "Euro",
+    "currencySymbol": "€",
+    "languages": "Luxembourgish, French, German"
+  },
+  {
+    "code": "IS",
+    "name": "Iceland",
+    "title": "Iceland",
+    "timezone": "UTC+00:00",
+    "capital": "Reykjavík",
+    "currency": "Icelandic króna",
+    "currencySymbol": "kr",
+    "languages": "Icelandic"
+  },
+  {
+    "code": "AL",
+    "name": "Albania",
+    "title": "Albania",
+    "timezone": "UTC+01:00",
+    "capital": "Tirana",
+    "currency": "Albanian lek",
+    "currencySymbol": "L",
+    "languages": "Albanian"
+  },
+  {
+    "code": "MT",
+    "name": "Malta",
+    "title": "Malta",
+    "timezone": "UTC+01:00",
+    "capital": "Valletta",
+    "currency": "Euro",
+    "currencySymbol": "€",
+    "languages": "Maltese, English"
+  },
+  {
+    "code": "CY",
+    "name": "Cyprus",
+    "title": "Cyprus",
+    "timezone": "UTC+02:00",
+    "capital": "Nicosia",
+    "currency": "Euro",
+    "currencySymbol": "€",
+    "languages": "Greek, Turkish"
+  },
+  {
+    "code": "CU",
+    "name": "Cuba",
+    "title": "Cuba",
+    "timezone": "UTC-05:00",
+    "capital": "Havana",
+    "currency": "Cuban peso",
+    "currencySymbol": "$",
+    "languages": "Spanish"
+  },
+  {
+    "code": "VE",
+    "name": "Venezuela",
+    "title": "Venezuela",
+    "timezone": "UTC-04:00",
+    "capital": "Caracas",
+    "currency": "Venezuelan bolívar, United States dollar (unofficial)",
+    "currencySymbol": "Bs.S, $",
+    "languages": "Spanish"
+  },
+  {
+    "code": "GY",
+    "name": "Guyana",
+    "title": "Guyana",
+    "timezone": "UTC-04:00",
+    "capital": "Georgetown",
+    "currency": "Guyanese dollar",
+    "currencySymbol": "G$",
+    "languages": "English"
+  },
+  {
+    "code": "EC",
+    "name": "Ecuador",
+    "title": "Ecuador",
+    "timezone": "UTC-05:00",
+    "capital": "Quito",
+    "currency": "United States dollar",
+    "currencySymbol": "$",
+    "languages": "Spanish"
+  },
+  {
+    "code": "GF",
+    "name": "French Guiana",
+    "title": "French Guiana",
+    "timezone": "UTC-03:00",
+    "capital": "Cayenne",
+    "currency": "Euro",
+    "currencySymbol": "€",
+    "languages": "French"
+  },
+  {
+    "code": "PY",
+    "name": "Paraguay",
+    "title": "Paraguay",
+    "timezone": "UTC-03:00",
+    "capital": "Asunción",
+    "currency": "Paraguayan guaraní",
+    "currencySymbol": "₲",
+    "languages": "Spanish, Guaraní"
+  },
+  {
+    "code": "BO",
+    "name": "Bolivia",
+    "title": "Bolivia",
+    "timezone": "UTC-04:00",
+    "capital": "Sucre (Constitutional), La Paz (Executive/Legislative)",
+    "currency": "Bolivian boliviano",
+    "currencySymbol": "Bs",
+    "languages": "Spanish, Quechua, Aymara"
+  },
+  {
+    "code": "UY",
+    "name": "Uruguay",
+    "title": "Uruguay",
+    "timezone": "UTC-03:00",
+    "capital": "Montevideo",
+    "currency": "Uruguayan peso",
+    "currencySymbol": "$",
+    "languages": "Spanish"
+  },
+  {
+    "code": "FJ",
+    "name": "Fiji",
+    "title": "Fiji",
+    "timezone": "UTC+12:00",
+    "capital": "Suva",
+    "currency": "Fijian dollar",
+    "currencySymbol": "FJ$",
+    "languages": "Fijian, English, Hindi"
+  },
+  {
+    "code": "PG",
+    "name": "Papua New Guinea",
+    "title": "Papua New Guinea",
+    "timezone": "Multiple (e.g., UTC+10:00, UTC+11:00)",
+    "capital": "Port Moresby",
+    "currency": "Papua New Guinean kina",
+    "currencySymbol": "K",
+    "languages": "Tok Pisin, Hiri Motu, English"
+  },
+  {
+    "code": "TO",
+    "name": "Tonga",
+    "title": "Tonga",
+    "timezone": "UTC+13:00",
+    "capital": "Nukuʻalofa",
+    "currency": "Tongan paʻanga",
+    "currencySymbol": "T$",
+    "languages": "Tongan, English"
+  },
+  {
+    "code": "SB",
+    "name": "Solomon Islands",
+    "title": "Solomon Islands",
+    "timezone": "UTC+11:00",
+    "capital": "Honiara",
+    "currency": "Solomon Islands dollar",
+    "currencySymbol": "SI$",
+    "languages": "English, Solomons Pijin"
+  },
+  {
+    "code": "VU",
+    "name": "Vanuatu",
+    "title": "Vanuatu",
+    "timezone": "UTC+11:00",
+    "capital": "Port Vila",
+    "currency": "Vanuatu vatu",
+    "currencySymbol": "Vt",
+    "languages": "Bislama, English, French"
+  },
+  {
+    "code": "WS",
+    "name": "Samoa",
+    "title": "Samoa",
+    "timezone": "UTC+13:00",
+    "capital": "Apia",
+    "currency": "Samoan tālā",
+    "currencySymbol": "T",
+    "languages": "Samoan, English"
+  },
+  {
+    "code": "KI",
+    "name": "Kiribati",
+    "title": "Kiribati",
+    "timezone": "UTC+12:00, UTC+13:00, UTC+14:00",
+    "capital": "South Tarawa",
+    "currency": "Australian dollar",
+    "currencySymbol": "A$",
+    "languages": "Gilbertese (I-Kiribati), English"
+  },
+  {
+    "code": "NC",
+    "name": "New Caledonia",
+    "title": "New Caledonia",
+    "timezone": "UTC+11:00",
+    "capital": "Nouméa",
+    "currency": "CFP franc",
+    "currencySymbol": "₣",
+    "languages": "French"
+  },
+  {
+    "code": "TV",
+    "name": "Tuvalu",
+    "title": "Tuvalu",
+    "timezone": "UTC+12:00",
+    "capital": "Funafuti",
+    "currency": "Australian dollar, Tuvaluan dollar",
+    "currencySymbol": "A$",
+    "languages": "Tuvaluan, English"
+  },
+  {
+    "code": "PF",
+    "name": "French Polynesia",
+    "title": "French Polynesia",
+    "timezone": "Multiple (e.g., UTC-10:00, UTC-09:30, UTC-09:00)",
+    "capital": "Papeete",
+    "currency": "CFP franc",
+    "currencySymbol": "₣",
+    "languages": "French, Tahitian"
+  },
+  {
+    "code": "TK",
+    "name": "Tokelau",
+    "title": "Tokelau",
+    "timezone": "UTC+13:00",
+    "capital": "Nukunonu, Atafu, and Fakaofo (Rotating)",
+    "currency": "New Zealand dollar",
+    "currencySymbol": "NZ$",
+    "languages": "Tokelauan, English"
+  },
+  {
+    "code": "FM",
+    "name": "Micronesia",
+    "title": "Micronesia",
+    "timezone": "Multiple (e.g., UTC+10:00, UTC+11:00)",
+    "capital": "Palikir",
+    "currency": "United States dollar",
+    "currencySymbol": "$",
+    "languages": "English, Chuukese, Pohnpeian, Kosraean, Yapese"
+  },
+  {
+    "code": "MH",
+    "name": "Marshall Islands",
+    "title": "Marshall Islands",
+    "timezone": "UTC+12:00",
+    "capital": "Majuro",
+    "currency": "United States dollar",
+    "currencySymbol": "$",
+    "languages": "Marshallese, English"
+  },
+  {
+    "code": "KZ",
+    "name": "Kazakhstan",
+    "title": "Kazakhstan",
+    "timezone": "UTC+05:00",
+    "capital": "Astana",
+    "currency": "Kazakhstani tenge",
+    "currencySymbol": "₸",
+    "languages": "Kazakh, Russian"
+  },
+  {
+    "code": "KP",
+    "name": "North Korea",
+    "title": "North Korea",
+    "timezone": "UTC+09:00",
+    "capital": "Pyongyang",
+    "currency": "North Korean won",
+    "currencySymbol": "₩",
+    "languages": "Korean"
+  },
+  {
+    "code": "KH",
+    "name": "Cambodia",
+    "title": "Cambodia",
+    "timezone": "UTC+07:00",
+    "capital": "Phnom Penh",
+    "currency": "Cambodian riel",
+    "currencySymbol": "៛",
+    "languages": "Khmer"
+  },
+  {
+    "code": "LA",
+    "name": "Laos",
+    "title": "Laos",
+    "timezone": "UTC+07:00",
+    "capital": "Vientiane",
+    "currency": "Lao kip",
+    "currencySymbol": "₭",
+    "languages": "Lao"
+  },
+  {
+    "code": "BD",
+    "name": "Bangladesh",
+    "title": "Bangladesh",
+    "timezone": "UTC+06:00",
+    "capital": "Dhaka",
+    "currency": "Bangladeshi taka",
+    "currencySymbol": "৳",
+    "languages": "Bengali"
+  },
+  {
+    "code": "PK",
+    "name": "Pakistan",
+    "title": "Pakistan",
+    "timezone": "UTC+05:00",
+    "capital": "Islamabad",
+    "currency": "Pakistani rupee",
+    "currencySymbol": "₨",
+    "languages": "Urdu, English"
+  },
+  {
+    "code": "AF",
+    "name": "Afghanistan",
+    "title": "Afghanistan",
+    "timezone": "UTC+04:30",
+    "capital": "Kabul",
+    "currency": "Afghan afghani",
+    "currencySymbol": "؋",
+    "languages": "Dari, Pashto"
+  },
+  {
+    "code": "LK",
+    "name": "Sri Lanka",
+    "title": "Sri Lanka",
+    "timezone": "UTC+05:30",
+    "capital": "Sri Jayawardenepura Kotte (Legislative), Colombo (Judicial, Executive)",
+    "currency": "Sri Lankan rupee",
+    "currencySymbol": "₨",
+    "languages": "Sinhala, Tamil"
+  },
+  {
+    "code": "MM",
+    "name": "Myanmar",
+    "title": "Myanmar",
+    "timezone": "UTC+06:30",
+    "capital": "Naypyidaw",
+    "currency": "Kyat",
+    "currencySymbol": "K",
+    "languages": "Burmese"
+  },
+  {
+    "code": "MV",
+    "name": "Maldives",
+    "title": "Maldives",
+    "timezone": "UTC+05:00",
+    "capital": "Malé",
+    "currency": "Maldivian rufiyaa",
+    "currencySymbol": "Rf",
+    "languages": "Maldivian (Dhivehi)"
+  },
+  {
+    "code": "LB",
+    "name": "Lebanon",
+    "title": "Lebanon",
+    "timezone": "UTC+02:00",
+    "capital": "Beirut",
+    "currency": "Lebanese pound",
+    "currencySymbol": "£",
+    "languages": "Arabic"
+  },
+  {
+    "code": "JO",
+    "name": "Jordan",
+    "title": "Jordan",
+    "timezone": "UTC+03:00",
+    "capital": "Amman",
+    "currency": "Jordanian dinar",
+    "currencySymbol": "JD",
+    "languages": "Modern Standard Arabic"
+  },
+  {
+    "code": "SY",
+    "name": "Syria",
+    "title": "Syria",
+    "timezone": "UTC+03:00",
+    "capital": "Damascus",
+    "currency": "Syrian pound",
+    "currencySymbol": "£",
+    "languages": "Modern Standard Arabic"
+  },
+  {
+    "code": "IQ",
+    "name": "Iraq",
+    "title": "Iraq",
+    "timezone": "UTC+03:00",
+    "capital": "Baghdad",
+    "currency": "Iraqi dinar",
+    "currencySymbol": "ID",
+    "languages": "Arabic, Kurdish"
+  },
+  {
+    "code": "KW",
+    "name": "Kuwait",
+    "title": "Kuwait",
+    "timezone": "UTC+03:00",
+    "capital": "Kuwait City",
+    "currency": "Kuwaiti dinar",
+    "currencySymbol": "KD",
+    "languages": "Modern Standard Arabic"
+  },
+  {
+    "code": "BH",
+    "name": "Bahrain",
+    "title": "Bahrain",
+    "timezone": "UTC+03:00",
+    "capital": "Manama",
+    "currency": "Bahraini dinar",
+    "currencySymbol": "BD",
+    "languages": "Modern Standard Arabic"
+  },
+  {
+    "code": "QA",
+    "name": "Qatar",
+    "title": "Qatar",
+    "timezone": "UTC+03:00",
+    "capital": "Doha",
+    "currency": "Qatari riyal",
+    "currencySymbol": "﷼",
+    "languages": "Arabic"
+  },
+  {
+    "code": "AE",
+    "name": "United Arab Emirates",
+    "title": "United Arab Emirates",
+    "timezone": "UTC+04:00",
+    "capital": "Abu Dhabi",
+    "currency": "United Arab Emirates dirham",
+    "currencySymbol": "د.إ",
+    "languages": "Modern Standard Arabic"
+  },
+  {
+    "code": "OM",
+    "name": "Oman",
+    "title": "Oman",
+    "timezone": "UTC+04:00",
+    "capital": "Muscat",
+    "currency": "Omani rial",
+    "currencySymbol": "RO",
+    "languages": "Modern Standard Arabic"
+  },
+  {
+    "code": "YE",
+    "name": "Yemen",
+    "title": "Yemen",
+    "timezone": "UTC+03:00",
+    "capital": "Sana'a (De Jure), Aden (De Facto)",
+    "currency": "Yemeni rial",
+    "currencySymbol": "YR",
+    "languages": "Modern Standard Arabic"
+  },
+  {
+    "code": "PS",
+    "name": "Palestine",
+    "title": "Palestine",
+    "timezone": "UTC+02:00",
+    "capital": "East Jerusalem (Designated), Ramallah (Administrative)",
+    "currency": "Israeli new shekel (Common)",
+    "currencySymbol": "₪",
+    "languages": "Arabic"
+  },
+  {
+    "code": "UZ",
+    "name": "Uzbekistan",
+    "title": "Uzbekistan",
+    "timezone": "UTC+05:00",
+    "capital": "Tashkent",
+    "currency": "Uzbekistani soum",
+    "currencySymbol": "Soʻm",
+    "languages": "Uzbek"
+  },
+  {
+    "code": "TM",
+    "name": "Turkmenistan",
+    "title": "Turkmenistan",
+    "timezone": "UTC+05:00",
+    "capital": "Ashgabat",
+    "currency": "Turkmenistani manat",
+    "currencySymbol": "m",
+    "languages": "Turkmen"
+  },
+  {
+    "code": "AZ",
+    "name": "Azerbaijan",
+    "title": "Azerbaijan",
+    "timezone": "UTC+04:00",
+    "capital": "Baku",
+    "currency": "Azerbaijani manat",
+    "currencySymbol": "₼",
+    "languages": "Azerbaijani"
+  },
+  {
+    "code": "GE",
+    "name": "Georgia",
+    "title": "Georgia",
+    "timezone": "UTC+04:00",
+    "capital": "Tbilisi",
+    "currency": "Georgian Lari",
+    "currencySymbol": "₾",
+    "languages": "Georgian"
+  },
+  {
+    "code": "KG",
+    "name": "Kyrgyzstan",
+    "title": "Kyrgyzstan",
+    "timezone": "UTC+06:00",
+    "capital": "Bishkek",
+    "currency": "Kyrgyzstani som",
+    "currencySymbol": "C",
+    "languages": "Kyrgyz, Russian"
+  },
+  {
+    "code": "TJ",
+    "name": "Tajikistan",
+    "title": "Tajikistan",
+    "timezone": "UTC+05:00",
+    "capital": "Dushanbe",
+    "currency": "Tajikistani somoni",
+    "currencySymbol": "SM",
+    "languages": "Tajik"
+  },
+  {
+    "code": "MN",
+    "name": "Mongolia",
+    "title": "Mongolia",
+    "timezone": "Multiple (e.g., UTC+07:00, UTC+08:00)",
+    "capital": "Ulaanbaatar",
+    "currency": "Mongolian tögrög",
+    "currencySymbol": "₮",
+    "languages": "Mongolian"
+  },
+  {
+    "code": "NP",
+    "name": "Nepal",
+    "title": "Nepal",
+    "timezone": "UTC+05:45",
+    "capital": "Kathmandu",
+    "currency": "Nepalese rupee",
+    "currencySymbol": "₨",
+    "languages": "Nepali"
+  },
+  {
+    "code": "BT",
+    "name": "Bhutan",
+    "title": "Bhutan",
+    "timezone": "UTC+06:00",
+    "capital": "Thimphu",
+    "currency": "Bhutanese ngultrum",
+    "currencySymbol": "Nu.",
+    "languages": "Dzongkha"
+  },
+  {
+    "code": "BN",
+    "name": "Brunei",
+    "title": "Brunei",
+    "timezone": "UTC+08:00",
+    "capital": "Bandar Seri Begawan",
+    "currency": "Brunei dollar",
+    "currencySymbol": "B$",
+    "languages": "Malay"
+  },
+  {
+    "code": "NR",
+    "name": "Nauru",
+    "title": "Nauru",
+    "timezone": "UTC+12:00",
+    "capital": "Yaren (De Facto/Seat of Government)",
+    "currency": "Australian dollar",
+    "currencySymbol": "A$",
+    "languages": "Nauruan, English"
+  },
+  {
+    "code": "PW",
+    "name": "Palau",
+    "title": "Palau",
+    "timezone": "UTC+09:00",
+    "capital": "Ngerulmud",
+    "currency": "United States dollar",
+    "currencySymbol": "$",
+    "languages": "Palauan, English"
+  },
+  {
+    "code": "CK",
+    "name": "Cook Islands",
+    "title": "Cook Islands",
+    "timezone": "UTC-10:00",
+    "capital": "Avarua",
+    "currency": "New Zealand dollar, Cook Islands dollar",
+    "currencySymbol": "NZ$",
+    "languages": "Cook Islands Māori, English"
+  },
+  {
+    "code": "NU",
+    "name": "Niue",
+    "title": "Niue",
+    "timezone": "UTC-11:00",
+    "capital": "Alofi",
+    "currency": "New Zealand dollar",
+    "currencySymbol": "NZ$",
+    "languages": "Niuean, English"
+  },
+  {
+    "code": "WF",
+    "name": "Wallis and Futuna",
+    "title": "Wallis and Futuna",
+    "timezone": "UTC+12:00",
+    "capital": "Mata-Utu",
+    "currency": "CFP franc",
+    "currencySymbol": "₣",
+    "languages": "French"
+  },
+  {
+    "code": "AS",
+    "name": "American Samoa",
+    "title": "American Samoa",
+    "timezone": "UTC-11:00",
+    "capital": "Pago Pago",
+    "currency": "United States dollar",
+    "currencySymbol": "$",
+    "languages": "Samoan, English"
+  },
+  {
+    "code": "GU",
+    "name": "Guam",
+    "title": "Guam",
+    "timezone": "UTC+10:00",
+    "capital": "Hagåtña",
+    "currency": "United States dollar",
+    "currencySymbol": "$",
+    "languages": "English, Chamorro"
+  },
+  {
+    "code": "MP",
+    "name": "Northern Mariana Islands",
+    "title": "Northern Mariana Islands",
+    "timezone": "UTC+10:00",
+    "capital": "Saipan",
+    "currency": "United States dollar",
+    "currencySymbol": "$",
+    "languages": "English, Chamorro, Carolinian"
+  },
+  {
+    "code": "VI",
+    "name": "U.S. Virgin Islands",
+    "title": "United States Virgin Islands",
+    "timezone": "UTC-04:00",
+    "capital": "Charlotte Amalie",
+    "currency": "United States dollar",
+    "currencySymbol": "$",
+    "languages": "English"
+  },
+  {
+    "code": "PR",
+    "name": "Puerto Rico",
+    "title": "Puerto Rico",
+    "timezone": "UTC-04:00",
+    "capital": "San Juan",
+    "currency": "United States dollar",
+    "currencySymbol": "$",
+    "languages": "Spanish, English"
+  },
+  {
+    "code": "DO",
+    "name": "Dominican Republic",
+    "title": "Dominican Republic",
+    "timezone": "UTC-04:00",
+    "capital": "Santo Domingo",
+    "currency": "Dominican peso",
+    "currencySymbol": "RD$",
+    "languages": "Spanish"
+  },
+  {
+    "code": "TT",
+    "name": "Trinidad and Tobago",
+    "title": "Trinidad and Tobago",
+    "timezone": "UTC-04:00",
+    "capital": "Port of Spain",
+    "currency": "Trinidad and Tobago dollar",
+    "currencySymbol": "TT$",
+    "languages": "English"
+  },
+  {
+    "code": "JM",
+    "name": "Jamaica",
+    "title": "Jamaica",
+    "timezone": "UTC-05:00",
+    "capital": "Kingston",
+    "currency": "Jamaican dollar",
+    "currencySymbol": "J$",
+    "languages": "English, Jamaican Patois"
+  },
+  {
+    "code": "GP",
+    "name": "Guadeloupe",
+    "title": "Guadeloupe",
+    "timezone": "UTC-04:00",
+    "capital": "Basse-Terre",
+    "currency": "Euro",
+    "currencySymbol": "€",
+    "languages": "French"
+  },
+  {
+    "code": "BL",
+    "name": "Saint Barthélemy",
+    "title": "Saint Barthélemy",
+    "timezone": "UTC-04:00",
+    "capital": "Gustavia",
+    "currency": "Euro",
+    "currencySymbol": "€",
+    "languages": "French"
+  },
+  {
+    "code": "MF",
+    "name": "Saint Martin",
+    "title": "Saint Martin (island)",
+    "timezone": "UTC-04:00",
+    "capital": "Marigot (French side)",
+    "currency": "Euro (French side), Netherlands Antillean guilder (Dutch side)",
+    "currencySymbol": "€, NAƒ",
+    "languages": "French, Dutch, English"
+  },
+  {
+    "code": "MQ",
+    "name": "Martinique",
+    "title": "Martinique",
+    "timezone": "UTC-04:00",
+    "capital": "Fort-de-France",
+    "currency": "Euro",
+    "currencySymbol": "€",
+    "languages": "French"
+  },
+  {
+    "code": "SR",
+    "name": "Suriname",
+    "title": "Suriname",
+    "timezone": "UTC-03:00",
+    "capital": "Paramaribo",
+    "currency": "Surinamese dollar",
+    "currencySymbol": "SRD$",
+    "languages": "Dutch"
+  },
+  {
+    "code": "CW",
+    "name": "Curaçao",
+    "title": "Curaçao",
+    "timezone": "UTC-04:00",
+    "capital": "Willemstad",
+    "currency": "Caribbean guilder",
+    "currencySymbol": "NAƒ",
+    "languages": "Papiamento, Dutch, English"
+  },
+  {
+    "code": "BQ",
+    "name": "Caribbean Netherlands",
+    "title": "Caribbean Netherlands",
+    "timezone": "UTC-04:00",
+    "capital": "Kralendijk (Bonaire), Oranjestad (Sint Eustatius), The Bottom (Saba)",
+    "currency": "United States dollar (Bonaire, Saba, Sint Eustatius)",
+    "currencySymbol": "$",
+    "languages": "Dutch"
+  },
+  {
+    "code": "TL",
+    "name": "East Timor",
+    "title": "Timor-Leste",
+    "timezone": "UTC+09:00",
+    "capital": "Dili",
+    "currency": "United States dollar",
+    "currencySymbol": "$",
+    "languages": "Tetum, Portuguese"
+  },
+  {
+    "code": "NF",
+    "name": "Norfolk Island",
+    "title": "Norfolk Island",
+    "timezone": "UTC+11:00",
+    "capital": "Kingston",
+    "currency": "Australian dollar",
+    "currencySymbol": "A$",
+    "languages": "English, Norfuk"
+  },
+  {
+    "code": "AQ",
+    "name": "Antarctica",
+    "title": "Antarctica",
+    "timezone": "Various (None Official)",
+    "capital": "None",
+    "currency": "None Official (Various Currencies Used)",
+    "currencySymbol": "",
+    "languages": "Various (English, Russian, Spanish, French, etc.)"
+  },
+  {
+    "code": "BZ",
+    "name": "Belize",
+    "title": "Belize",
+    "timezone": "UTC-06:00",
+    "capital": "Belmopan",
+    "currency": "Belize dollar",
+    "currencySymbol": "BZ$",
+    "languages": "English"
+  },
+  {
+    "code": "GT",
+    "name": "Guatemala",
+    "title": "Guatemala",
+    "timezone": "UTC-06:00",
+    "capital": "Guatemala City",
+    "currency": "Guatemalan quetzal",
+    "currencySymbol": "Q",
+    "languages": "Spanish"
+  },
+  {
+    "code": "SV",
+    "name": "El Salvador",
+    "title": "El Salvador",
+    "timezone": "UTC-06:00",
+    "capital": "San Salvador",
+    "currency": "United States dollar",
+    "currencySymbol": "$",
+    "languages": "Spanish"
+  },
+  {
+    "code": "HN",
+    "name": "Honduras",
+    "title": "Honduras",
+    "timezone": "UTC-06:00",
+    "capital": "Tegucigalpa",
+    "currency": "Honduran lempira",
+    "currencySymbol": "L",
+    "languages": "Spanish"
+  },
+  {
+    "code": "NI",
+    "name": "Nicaragua",
+    "title": "Nicaragua",
+    "timezone": "UTC-06:00",
+    "capital": "Managua",
+    "currency": "Nicaraguan córdoba",
+    "currencySymbol": "C$",
+    "languages": "Spanish"
+  },
+  {
+    "code": "CR",
+    "name": "Costa Rica",
+    "title": "Costa Rica",
+    "timezone": "UTC-06:00",
+    "capital": "San José",
+    "currency": "Costa Rican colón",
+    "currencySymbol": "₡",
+    "languages": "Spanish"
+  },
+  {
+    "code": "PA",
+    "name": "Panama",
+    "title": "Panama",
+    "timezone": "UTC-05:00",
+    "capital": "Panama City",
+    "currency": "Panamanian balboa, United States dollar",
+    "currencySymbol": "B/.",
+    "languages": "Spanish"
+  },
+  {
+    "code": "PM",
+    "name": "Saint Pierre and Miquelon",
+    "title": "Saint Pierre and Miquelon",
+    "timezone": "UTC-03:00",
+    "capital": "Saint-Pierre",
+    "currency": "Euro",
+    "currencySymbol": "€",
+    "languages": "French"
+  },
+  {
+    "code": "HT",
+    "name": "Haiti",
+    "title": "Haiti",
+    "timezone": "UTC-05:00",
+    "capital": "Port-au-Prince",
+    "currency": "Haitian gourde",
+    "currencySymbol": "G",
+    "languages": "Haitian Creole, French"
+  },
+  {
+    "code": "FK",
+    "name": "Falkland Islands",
+    "title": "Falkland Islands",
+    "timezone": "UTC-03:00",
+    "capital": "Stanley",
+    "currency": "Falkland Islands pound, Pound sterling",
+    "currencySymbol": "£",
+    "languages": "English"
+  },
+  {
+    "code": "GL",
+    "name": "Greenland",
+    "title": "Greenland",
+    "timezone": "Multiple (e.g., UTC-03:00 to UTC+00:00)",
+    "capital": "Nuuk",
+    "currency": "Danish krone",
+    "currencySymbol": "kr",
+    "languages": "Greenlandic, Danish"
+  },
+  {
+    "code": "FO",
+    "name": "Faroe Islands",
+    "title": "Faroe Islands",
+    "timezone": "UTC+00:00",
+    "capital": "Tórshavn",
+    "currency": "Faroese króna, Danish krone",
+    "currencySymbol": "kr",
+    "languages": "Faroese, Danish"
+  },
+  {
+    "code": "AD",
+    "name": "Andorra",
+    "title": "Andorra",
+    "timezone": "UTC+01:00",
+    "capital": "Andorra la Vella",
+    "currency": "Euro",
+    "currencySymbol": "€",
+    "languages": "Catalan"
+  },
+  {
+    "code": "MC",
+    "name": "Monaco",
+    "title": "Monaco",
+    "timezone": "UTC+01:00",
+    "capital": "Monaco",
+    "currency": "Euro",
+    "currencySymbol": "€",
+    "languages": "French"
+  },
+  {
+    "code": "SM",
+    "name": "San Marino",
+    "title": "San Marino",
+    "timezone": "UTC+01:00",
+    "capital": "City of San Marino",
+    "currency": "Euro",
+    "currencySymbol": "€",
+    "languages": "Italian"
+  },
+  {
+    "code": "VA",
+    "name": "Vatican City",
+    "title": "Vatican City",
+    "timezone": "UTC+01:00",
+    "capital": "Vatican City",
+    "currency": "Euro",
+    "currencySymbol": "€",
+    "languages": "Italian, Latin"
+  },
+  {
+    "code": "BY",
+    "name": "Belarus",
+    "title": "Belarus",
+    "timezone": "UTC+03:00",
+    "capital": "Minsk",
+    "currency": "Belarusian ruble",
+    "currencySymbol": "Br",
+    "languages": "Belarusian, Russian"
+  },
+  {
+    "code": "MD",
+    "name": "Moldova",
+    "title": "Moldova",
+    "timezone": "UTC+02:00",
+    "capital": "Chișinău",
+    "currency": "Moldovan leu",
+    "currencySymbol": "L",
+    "languages": "Romanian"
+  },
+  {
+    "code": "ME",
+    "name": "Montenegro",
+    "title": "Montenegro",
+    "timezone": "UTC+01:00",
+    "capital": "Podgorica",
+    "currency": "Euro",
+    "currencySymbol": "€",
+    "languages": "Montenegrin"
+  },
+  {
+    "code": "XK",
+    "name": "Kosovo",
+    "title": "Kosovo",
+    "timezone": "UTC+01:00",
+    "capital": "Pristina",
+    "currency": "Euro",
+    "currencySymbol": "€",
+    "languages": "Albanian, Serbian"
+  },
+  {
+    "code": "BA",
+    "name": "Bosnia and Herzegovina",
+    "title": "Bosnia and Herzegovina",
+    "timezone": "UTC+01:00",
+    "capital": "Sarajevo",
+    "currency": "Bosnia and Herzegovina convertible mark",
+    "currencySymbol": "KM",
+    "languages": "Bosnian, Croatian, Serbian"
+  },
+  {
+    "code": "MK",
+    "name": "North Macedonia",
+    "title": "North Macedonia",
+    "timezone": "UTC+01:00",
+    "capital": "Skopje",
+    "currency": "Macedonian denar",
+    "currencySymbol": "ден",
+    "languages": "Macedonian"
+  },
+  {
+    "code": "LI",
+    "name": "Liechtenstein",
+    "title": "Liechtenstein",
+    "timezone": "UTC+01:00",
+    "capital": "Vaduz",
+    "currency": "Swiss franc",
+    "currencySymbol": "CHF",
+    "languages": "German"
+  },
+  {
+    "code": "AM",
+    "name": "Armenia",
+    "title": "Armenia",
+    "timezone": "UTC+04:00",
+    "capital": "Yerevan",
+    "currency": "Armenian dram",
+    "currencySymbol": "֏",
+    "languages": "Armenian"
+  }
+]

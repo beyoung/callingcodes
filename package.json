@@ -6,9 +6,22 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "deploy": "pnpm run build && wrangler pages deploy dist",
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.14.4"
-  }
+    "@astrojs/cloudflare": "^12.6.10",
+    "@astrojs/tailwind": "^6.0.2",
+    "@types/d3": "^7.4.3",
+    "@types/topojson-client": "^3.1.5",
+    "astro": "^5.14.4",
+    "d3": "^7.9.0",
+    "d3-geo": "^3.1.1",
+    "topojson-client": "^3.1.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.19",
+    "tailwindcss": "^3.4.18"
+  },
+  "packageManager": "pnpm@10.16.1+sha512.0e155aa2629db8672b49e8475da6226aa4bdea85fdcdfdc15350874946d4f3c91faaf64cbdc4a5d1ab8002f473d5c3fcedcd197989cf0390f9badd3c04678706"
 }
